@@ -3110,3 +3110,427 @@ body.theme-light .artifact-canvas {
     padding: 75px 0;
   }
 }
+
+
+/* ==========================================================================
+   HERO REAL CAMPUS ARCHITECTURAL SHOWCASE WITH HUD OVERLAY
+   Inspired by Reference Mockup
+   ========================================================================== */
+.hero-campus-showcase {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.campus-image-frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.6);
+  background: var(--bg-surface);
+}
+
+.campus-real-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(80%) contrast(118%) brightness(82%);
+  transition: filter var(--transition-normal), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.campus-image-frame:hover .campus-real-img {
+  filter: grayscale(40%) contrast(110%) brightness(90%);
+  transform: scale(1.02);
+}
+
+[data-theme="light"] .campus-real-img,
+body.theme-light .campus-real-img {
+  filter: saturate(102%) contrast(100%) brightness(98%);
+}
+
+.campus-hud-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(11, 12, 14, 0.6) 0%, transparent 60%, rgba(11, 12, 14, 0.7) 100%);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+[data-theme="light"] .campus-hud-overlay,
+body.theme-light .campus-hud-overlay {
+  background: linear-gradient(135deg, rgba(244, 241, 234, 0.4) 0%, transparent 60%, rgba(244, 241, 234, 0.6) 100%);
+}
+
+.hud-top-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+  background: rgba(11, 12, 14, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+  align-self: flex-start;
+}
+
+[data-theme="light"] .hud-top-tag,
+body.theme-light .hud-top-tag {
+  background: rgba(244, 241, 234, 0.85);
+  color: var(--text-primary);
+}
+
+.hud-sub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.hud-bracket {
+  color: var(--accent-cobalt-light);
+}
+
+.hud-crosshair-circle {
+  position: absolute;
+  top: 40%;
+  right: 28%;
+  width: 50px;
+  height: 50px;
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hud-circle-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent-cobalt-light);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-cobalt);
+}
+
+.hud-cross-h {
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  right: -8px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hud-cross-v {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  bottom: -8px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hud-lifecycle-vertical {
+  position: absolute;
+  bottom: 2.2rem;
+  right: 1.25rem;
+  background: rgba(11, 12, 14, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+[data-theme="light"] .hud-lifecycle-vertical,
+body.theme-light .hud-lifecycle-vertical {
+  background: rgba(244, 241, 234, 0.85);
+}
+
+.hl-item {
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.hl-item.active {
+  color: var(--accent-cobalt-light);
+  font-weight: 700;
+}
+
+.hud-bottom-telemetry {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: rgba(11, 12, 14, 0.75);
+  backdrop-filter: blur(4px);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+  align-self: flex-start;
+}
+
+[data-theme="light"] .hud-bottom-telemetry,
+body.theme-light .hud-bottom-telemetry {
+  background: rgba(244, 241, 234, 0.85);
+}
+
+.hb-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-emerald);
+  border-radius: 50%;
+  animation: pulse-ring 2s infinite;
+}
+
+/* ==========================================================================
+   RESEARCH SPOTLIGHT LATTICE CARD
+   ========================================================================== */
+.research-spotlight-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 3.5rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .research-spotlight-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+.research-lattice-visual {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #08090C;
+}
+
+.lattice-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.lattice-glow-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.research-spotlight-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.r-spec-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.r-spec-k {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.r-spec-v {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.r-spec-result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.r-spec-val {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 800;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.btn-circle-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-circle-arrow:hover {
+  background: var(--accent-cobalt);
+  color: #fff;
+  border-color: var(--accent-cobalt);
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   GITHUB CONTRIBUTION ACTIVITY HEATMAP WIDGET
+   ========================================================================== */
+.header-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.github-heatmap-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.heatmap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.heatmap-stat-item {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-right: 2.5rem;
+}
+
+.h-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.h-stat-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.heatmap-octocat {
+  font-size: 2rem;
+  color: var(--text-secondary);
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-rows: repeat(7, 12px);
+  grid-auto-flow: column;
+  grid-auto-columns: 12px;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.heatmap-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--bg-surface-elevated);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.3);
+  z-index: 10;
+}
+
+.heatmap-cell.l-0 { background: rgba(255, 255, 255, 0.04); }
+.heatmap-cell.l-1 { background: rgba(245, 158, 11, 0.25); }
+.heatmap-cell.l-2 { background: rgba(245, 158, 11, 0.5); }
+.heatmap-cell.l-3 { background: rgba(245, 158, 11, 0.75); }
+.heatmap-cell.l-4 { background: #f59e0b; box-shadow: 0 0 6px rgba(245, 158, 11, 0.4); }
+
+[data-theme="light"] .heatmap-cell.l-0,
+body.theme-light .heatmap-cell.l-0 { background: rgba(17, 19, 21, 0.06); }
+[data-theme="light"] .heatmap-cell.l-1,
+body.theme-light .heatmap-cell.l-1 { background: rgba(217, 119, 6, 0.25); }
+[data-theme="light"] .heatmap-cell.l-2,
+body.theme-light .heatmap-cell.l-2 { background: rgba(217, 119, 6, 0.5); }
+[data-theme="light"] .heatmap-cell.l-3,
+body.theme-light .heatmap-cell.l-3 { background: rgba(217, 119, 6, 0.75); }
+[data-theme="light"] .heatmap-cell.l-4,
+body.theme-light .heatmap-cell.l-4 { background: #d97706; }
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.heatmap-legend .sq {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.heatmap-legend .sq-0 { background: rgba(255, 255, 255, 0.05); }
+.heatmap-legend .sq-1 { background: rgba(245, 158, 11, 0.25); }
+.heatmap-legend .sq-2 { background: rgba(245, 158, 11, 0.5); }
+.heatmap-legend .sq-3 { background: rgba(245, 158, 11, 0.75); }
+.heatmap-legend .sq-4 { background: #f59e0b; }

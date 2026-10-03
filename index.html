@@ -36,7 +36,7 @@
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <link rel="stylesheet" href="style.css?v=20261003-editorial-v3">
+  <link rel="stylesheet" href="style.css?v=20261003-ref-v4">
 
   <!-- Structured Data JSON-LD Schema -->
   <script type="application/ld+json">
@@ -232,6 +232,10 @@
             <span>Official Web (aimlcluboct.in)</span>
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
+          <a href="https://drive.google.com/drive/folders/1-_byssQsFS1pw02iDxyt40_n2CdCBaOk?usp=sharing" target="_blank" rel="noopener noreferrer" class="drawer-ext-item">
+            <span>Media & Event Photos Drive</span>
+            <i class="fa-brands fa-google-drive"></i>
+          </a>
           <a href="https://drive.google.com/drive/folders/1xRzPHXexGDH9ggROAhSjkI2hPsdRcE9F?usp=sharing" target="_blank" rel="noopener noreferrer" class="drawer-ext-item">
             <span>Official Android APK Drive</span>
             <i class="fa-brands fa-android"></i>
@@ -355,60 +359,36 @@
             </div>
           </div>
 
-          <!-- Right Column: Abstract Engineering Artifact -->
+          <!-- Right Column: Real OCT Campus Architecture with Technical HUD Overlay -->
           <div class="hero-visual-column reveal-stagger">
-            <div class="hero-technical-artifact" aria-hidden="true">
-              <div class="artifact-frame">
-                <div class="artifact-header">
-                  <div class="artifact-id">
-                    <span class="pulse-indicator"></span>
-                    <span>OCT-AI-LAB // SPEC-2026.04</span>
+            <div class="hero-campus-showcase">
+              <div class="campus-image-frame">
+                <img src="assets/oct_campus_real.png" alt="Oriental College of Technology, Bhopal Campus Building" class="campus-real-img" />
+                <div class="campus-hud-overlay" aria-hidden="true">
+                  <div class="hud-top-tag">
+                    <span class="hud-bracket">[</span> AIML CLUB OCT <span class="hud-bracket">]</span><br>
+                    <span class="hud-sub">ESTD. 2021 • BHOPAL, INDIA</span>
                   </div>
-                  <div class="artifact-coords">23.2599°N · 77.4126°E</div>
-                </div>
-
-                <div class="artifact-canvas">
-                  <div class="grid-crosshairs ch-tl">+</div>
-                  <div class="grid-crosshairs ch-tr">+</div>
-                  <div class="grid-crosshairs ch-bl">+</div>
-                  <div class="grid-crosshairs ch-br">+</div>
-
-                  <div class="node-matrix">
-                    <div class="node-row">
-                      <div class="matrix-node active"><span class="n-tag">L-01</span> INPUT_TENSOR</div>
-                      <div class="matrix-line"></div>
-                      <div class="matrix-node"><span class="n-tag">L-02</span> VECTOR_TRANSFORM</div>
-                    </div>
-                    <div class="node-row center-row">
-                      <div class="matrix-node special"><span class="n-tag">L-03</span> MODEL_INFERENCE</div>
-                    </div>
-                    <div class="node-row">
-                      <div class="matrix-node"><span class="n-tag">L-04</span> RESIDUAL_FALLBACK</div>
-                      <div class="matrix-line"></div>
-                      <div class="matrix-node active"><span class="n-tag">L-05</span> PRODUCTION_API</div>
-                    </div>
+                  
+                  <div class="hud-crosshair-circle">
+                    <div class="hud-circle-inner"></div>
+                    <div class="hud-cross-h"></div>
+                    <div class="hud-cross-v"></div>
                   </div>
 
-                  <div class="telemetry-live-stream">
-                    <div class="stream-item">
-                      <span class="s-label">QUANTIZATION:</span>
-                      <span class="s-val text-emerald">INT8 ONNX (3.8x Speedup)</span>
-                    </div>
-                    <div class="stream-item">
-                      <span class="s-label">LATENCY_P95:</span>
-                      <span class="s-val">6.42 ms</span>
-                    </div>
-                    <div class="stream-item">
-                      <span class="s-label">FALLBACK:</span>
-                      <span class="s-val text-accent">Analytical Math Core Active</span>
-                    </div>
+                  <div class="hud-lifecycle-vertical">
+                    <div class="hl-item active"><span class="hl-bullet">—</span> LEARN</div>
+                    <div class="hl-item">BUILD</div>
+                    <div class="hl-item">RESEARCH</div>
+                    <div class="hl-item">EXPERIMENT</div>
+                    <div class="hl-item">SHIP</div>
+                    <div class="hl-item">SHARE</div>
                   </div>
-                </div>
 
-                <div class="artifact-footer">
-                  <div class="af-item"><span class="af-key">COUNCIL:</span> 41 Members</div>
-                  <div class="af-item"><span class="af-key">REPOS:</span> 07 Verified</div>
-                  <div class="af-item"><span class="af-key">MODULES:</span> 12 Units</div>
+                  <div class="hud-bottom-telemetry">
+                    <span class="hb-dot"></span>
+                    <span>OCT CSE LABS // GPS: 23.2599° N, 77.4126° E</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1215,7 +1195,7 @@
 
         <!-- Filter Buttons for Events -->
         <div class="event-filter-bar" id="event-filters">
-          <button class="filter-chip active" data-filter="all">All Events (09)</button>
+          <button class="filter-chip active" data-filter="all">All Events (12)</button>
           <button class="filter-chip" data-filter="workshops">Workshops</button>
           <button class="filter-chip" data-filter="competitions">Competitions</button>
           <button class="filter-chip" data-filter="talks">Expert Talks</button>
@@ -1224,6 +1204,53 @@
 
         <div class="timeline-container" id="events-timeline">
           
+          <!-- Event 0: Aptify 2.0 & Grand Winners Ceremony -->
+          <div class="timeline-row" data-category="competitions">
+            <div class="t-date-col">
+              <span class="t-date">2026-02-15</span>
+              <span class="t-badge badge-competition">COMPETITION & AWARDS</span>
+            </div>
+            <div class="t-content-col">
+              <h3 class="t-title">Aptify 2.0 & Grand Winners Felicitation Ceremony</h3>
+              <p class="t-desc">
+                The flagship second edition of Aptify featuring advanced technical aptitude, algorithmic reasoning rounds, and a grand felicitation ceremony honoring campus winners with certificates and accolades.
+              </p>
+              <div class="t-meta">
+                <span><i class="fa-solid fa-location-dot"></i> Central Auditorium, OCT Bhopal</span>
+                <span><i class="fa-regular fa-clock"></i> Campus Flagship</span>
+                <a href="https://drive.google.com/drive/folders/1-_byssQsFS1pw02iDxyt40_n2CdCBaOk?usp=sharing" target="_blank" rel="noopener noreferrer" class="t-drive-link" title="Open Official Drive Archive">
+                  <i class="fa-brands fa-google-drive"></i> Event & Winners Photos
+                </a>
+                <a href="https://github.com/AIMLCLUBOCT/EVENTS/tree/main/2026/aptify-2.0" target="_blank" rel="noopener noreferrer" class="t-drive-link">
+                  <i class="fa-brands fa-github"></i> Event Archive
+                </a>
+                <span class="t-status">COMPLETED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 0.5: CSC 2026 Technical Convention -->
+          <div class="timeline-row" data-category="orientation">
+            <div class="t-date-col">
+              <span class="t-date">2026-01-28</span>
+              <span class="t-badge badge-orientation">CONVENTION</span>
+            </div>
+            <div class="t-content-col">
+              <h3 class="t-title">CSC 2026 Technical Convention & AI Showcase</h3>
+              <p class="t-desc">
+                Annual technical convention showcasing student innovations, model demonstration booths, and research poster presentations across AI & Machine Learning.
+              </p>
+              <div class="t-meta">
+                <span><i class="fa-solid fa-location-dot"></i> Oriental Campus, Bhopal</span>
+                <span><i class="fa-regular fa-clock"></i> Full Day</span>
+                <a href="https://github.com/AIMLCLUBOCT/EVENTS/tree/main/2026/csc-2026" target="_blank" rel="noopener noreferrer" class="t-drive-link">
+                  <i class="fa-brands fa-github"></i> Convention Docs
+                </a>
+                <span class="t-status">COMPLETED</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Event 1 -->
           <div class="timeline-row" data-category="orientation">
             <div class="t-date-col">
@@ -1316,6 +1343,30 @@
                 <span><i class="fa-regular fa-clock"></i> 1 Hour</span>
                 <a href="https://drive.google.com/drive/folders/1yEwEA1owqbw1So4HH01FjJaeSejo5XMo" target="_blank" rel="noopener noreferrer" class="t-drive-link">
                   <i class="fa-solid fa-folder-open"></i> Archive Drive
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5.5: 3-Day Hands-on AI/ML Bootcamp -->
+          <div class="timeline-row" data-category="workshops">
+            <div class="t-date-col">
+              <span class="t-date">2025-09-12</span>
+              <span class="t-badge badge-workshop">BOOTCAMP</span>
+            </div>
+            <div class="t-content-col">
+              <h3 class="t-title">3-Day Hands-on AI/ML Bootcamp (10–12 Sep Workshop)</h3>
+              <p class="t-desc">
+                Intensive 3-day practical bootcamp covering Python fundamentals, NumPy vectorization, exploratory data analysis, and predictive modeling for engineering students.
+              </p>
+              <div class="t-meta">
+                <span><i class="fa-solid fa-location-dot"></i> OCT Bhopal Computer Center</span>
+                <span><i class="fa-regular fa-clock"></i> 3-Day Intensive</span>
+                <a href="https://drive.google.com/drive/folders/1-_byssQsFS1pw02iDxyt40_n2CdCBaOk?usp=sharing" target="_blank" rel="noopener noreferrer" class="t-drive-link">
+                  <i class="fa-brands fa-google-drive"></i> Bootcamp Photos & Certificates
+                </a>
+                <a href="https://github.com/AIMLCLUBOCT/EVENTS/tree/main/2025/10-12-sep-workshop" target="_blank" rel="noopener noreferrer" class="t-drive-link">
+                  <i class="fa-brands fa-github"></i> Workshop Repo
                 </a>
               </div>
             </div>
@@ -1485,6 +1536,30 @@
               <span>MIT License</span>
             </div>
           </div>
+
+          <div class="repo-spec-card">
+            <div class="repo-head">
+              <i class="fa-regular fa-folder-closed"></i>
+              <a href="https://github.com/AIMLCLUBOCT/EVENTS" target="_blank" rel="noopener noreferrer" class="repo-name">AIMLCLUBOCT / EVENTS</a>
+            </div>
+            <p class="repo-desc">Centralized archive of all club hackathons, workshops, bootcamps (Aptify 2.0, Codify, SnapCode) with schedules and outcomes.</p>
+            <div class="repo-meta">
+              <span><span class="lang-dot python"></span> Markdown / Archive</span>
+              <span>MIT License</span>
+            </div>
+          </div>
+
+          <div class="repo-spec-card">
+            <div class="repo-head">
+              <i class="fa-regular fa-folder-closed"></i>
+              <a href="https://github.com/AIMLCLUBOCT/.github" target="_blank" rel="noopener noreferrer" class="repo-name">AIMLCLUBOCT / .github</a>
+            </div>
+            <p class="repo-desc">Organization-wide governance, community health profiles, constitution, code of conduct, and contribution workflows.</p>
+            <div class="repo-meta">
+              <span><span class="lang-dot docker"></span> Community Health</span>
+              <span>CC-BY-4.0</span>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1518,6 +1593,16 @@
 
         <div class="ecosystem-cards-grid" style="margin-top: 3.5rem;">
           
+          <div class="eco-card">
+            <div class="eco-icon-box"><i class="fa-brands fa-google-drive"></i></div>
+            <h3 class="eco-name">Club Media & Event Records</h3>
+            <p class="eco-desc">Official Google Drive repository archiving high-resolution event photographs, certificates (10–12 Sep), and Aptify 2.0 ceremony moments.</p>
+            <div class="eco-url">drive.google.com/drive/folders/1-_byssQs...</div>
+            <a href="https://drive.google.com/drive/folders/1-_byssQsFS1pw02iDxyt40_n2CdCBaOk?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-eco-access">
+              Open Media Archive <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
           <div class="eco-card">
             <div class="eco-icon-box"><i class="fa-solid fa-globe"></i></div>
             <h3 class="eco-name">Flagship Production Web</h3>
@@ -1704,6 +1789,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261003-editorial-v3"></script>
+  <script src="script.js?v=20261003-ref-v4"></script>
 </body>
 </html>

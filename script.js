@@ -1014,6 +1014,21 @@
         links: [
           { text: 'Explore Issues', url: 'https://github.com/issues?q=is%3Aissue+is%3Aopen+org%3AAIMLCLUBOCT+label%3A%22good+first+issue%22', icon: 'fa-brands fa-github', btnClass: 'btn-action-primary' }
         ]
+      },
+      {
+        id: 'act-07',
+        type: 'announcement',
+        badge: 'MEDIA ARCHIVE',
+        statusClass: 'status-announcement',
+        date: 'Active Drive',
+        title: 'Official Event Photos, Winners Ceremonies & Certificates Archive Available',
+        host: 'Media & PR Council',
+        venue: 'Google Drive Media Repository',
+        desc: 'Access original resolution photo galleries from Aptify 2.0, the 10-12 Sep DSPL Bootcamp, club inauguration, and student certificate archives.',
+        links: [
+          { text: 'Open Media Drive', url: 'https://drive.google.com/drive/folders/1-_byssQsFS1pw02iDxyt40_n2CdCBaOk?usp=sharing', icon: 'fa-brands fa-google-drive', btnClass: 'btn-action-primary' },
+          { text: 'View EVENTS Repo', url: 'https://github.com/AIMLCLUBOCT/EVENTS', icon: 'fa-brands fa-github', btnClass: 'btn-terminal-outline' }
+        ]
       }
     ];
 
@@ -1294,7 +1309,35 @@
     initProposeActivityModal();
     initLenisScroll();
     initMagneticButtons();
+
+  // 17. GitHub Contribution Activity Heatmap Grid Generator
+  function initGitHubHeatmap() {
+    const grid = document.getElementById('github-heatmap-grid');
+    if (!grid) return;
+
+    const totalColumns = 36; // ~8 months of weekly columns
+    const daysPerColumn = 7;
+    let html = '';
+
+    // Deterministic pseudo-random pattern simulating active student development
+    for (let c = 0; c < totalColumns; c++) {
+      for (let r = 0; r < daysPerColumn; r++) {
+        const seed = (c * 7 + r * 13 + 42) % 100;
+        let level = 0;
+        if (seed > 85) level = 4;
+        else if (seed > 65) level = 3;
+        else if (seed > 40) level = 2;
+        else if (seed > 20) level = 1;
+
+        html += `<div class="heatmap-cell l-${level}" title="Day ${c * 7 + r + 1}: ${level * 3} contributions" data-cursor="VIEW"></div>`;
+      }
+    }
+
+    grid.innerHTML = html;
+  }
+
     initHeroEntrance();
+    initGitHubHeatmap();
   });
 
 })();
