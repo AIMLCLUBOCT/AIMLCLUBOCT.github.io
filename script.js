@@ -37,31 +37,53 @@
 
     if (!cursor || !follower || window.matchMedia('(hover: none)').matches) return;
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let followerX = mouseX;
-    let followerY = mouseY;
+    let mouseX = -100;
+    let mouseY = -100;
+    let followerX = -100;
+    let followerY = -100;
+    let hasMoved = false;
 
     window.addEventListener('mousemove', function (e) {
+      if (!hasMoved) {
+        hasMoved = true;
+        cursor.style.opacity = '1';
+        follower.style.opacity = '1';
+        followerX = e.clientX;
+        followerY = e.clientY;
+      }
       mouseX = e.clientX;
       mouseY = e.clientY;
-      cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
     }, { passive: true });
 
+    document.addEventListener('mouseleave', function () {
+      cursor.style.opacity = '0';
+      follower.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', function () {
+      if (hasMoved) {
+        cursor.style.opacity = '1';
+        follower.style.opacity = '1';
+      }
+    });
+
     function renderFollower() {
-      followerX += (mouseX - followerX) * 0.18;
-      followerY += (mouseY - followerY) * 0.18;
-      follower.style.transform = `translate3d(${followerX - 17}px, ${followerY - 17}px, 0)`;
+      if (hasMoved) {
+        followerX += (mouseX - followerX) * 0.18;
+        followerY += (mouseY - followerY) * 0.18;
+        follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+      }
       requestAnimationFrame(renderFollower);
     }
     requestAnimationFrame(renderFollower);
 
     // Interactive Hover Elements
-    const interactives = document.querySelectorAll('a, button, .project-feed-card, .curriculum-cell, .notebook-card, .member-card');
+    const interactives = document.querySelectorAll('a, button, .project-feed-card, .curriculum-cell, .notebook-card, .member-card, .gallery-item-card, .timeline-photo-strip figure');
     interactives.forEach(function (el) {
       el.addEventListener('mouseenter', function () {
         follower.classList.add('hovering');
-        const customText = el.getAttribute('data-cursor') || 'EXPLORE';
+        const customText = el.getAttribute('data-cursor') || (el.classList.contains('gallery-item-card') || el.closest('.timeline-photo-strip') ? 'VIEW' : 'EXPLORE');
         if (badge) badge.textContent = customText;
       });
       el.addEventListener('mouseleave', function () {
@@ -888,10 +910,9 @@
     const desktopToggle = document.getElementById('theme-toggle');
     const drawerToggle = document.getElementById('drawer-theme-toggle');
 
-    // Retrieve saved theme or evaluate system preference
+    // Retrieve saved theme or default to dark as primary experience
     const savedTheme = localStorage.getItem('aiml_theme');
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    let currentTheme = savedTheme || (prefersLight ? 'light' : 'dark');
+    let currentTheme = savedTheme || 'dark';
 
     function applyTheme(theme) {
       currentTheme = theme;
@@ -1402,6 +1423,25 @@
     }
 
     // Attach click listener to each gallery card
+    
+    // Also wire timeline event photos to open in lightbox
+    const timelineFigures = document.querySelectorAll('.timeline-photo-strip figure');
+    timelineFigures.forEach(function (fig) {
+      fig.addEventListener('click', function () {
+        const img = fig.querySelector('img');
+        if (!img) return;
+        const src = img.getAttribute('src');
+        // Find matching gallery card index
+        let targetIdx = 0;
+        cards.forEach(function (card, idx) {
+          if (card.getAttribute('data-src') === src) {
+            targetIdx = idx;
+          }
+        });
+        openLightbox(targetIdx);
+      });
+    });
+
     cards.forEach(function (card, idx) {
       card.addEventListener('click', function () {
         openLightbox(idx);
@@ -1458,6 +1498,68 @@
     initHeroEntrance();
     initGitHubHeatmap();
     initLightbox();
+    initBackToTop();
+    initMetricCounters();
+
+  // 13. Back to Top Button
+  function initBackToTop() {
+    const btn = document.getElementById('back-to-top-btn');
+    if (!btn) return;
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 400) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // 14. Hero Metric Counter Animation
+  function initMetricCounters() {
+    const counters = document.querySelectorAll('.metric-val');
+    if (!counters.length) return;
+
+    let hasAnimated = false;
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          counters.forEach(function (counter) {
+            const text = counter.textContent.trim();
+            const target = parseInt(text.replace(/\D/g, ''), 10);
+            if (isNaN(target)) return;
+            const suffix = text.includes('+') ? '+' : '';
+            const pad = text.startsWith('0') && target < 10;
+            
+            let current = 0;
+            const duration = 1200;
+            const stepTime = 30;
+            const totalSteps = duration / stepTime;
+            const increment = target / totalSteps;
+
+            const timer = setInterval(function () {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              const displayVal = Math.floor(current);
+              counter.textContent = (pad && displayVal < 10 ? '0' : '') + displayVal + suffix;
+            }, stepTime);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const statsGrid = document.querySelector('.hero-stats-grid');
+    if (statsGrid) observer.observe(statsGrid);
+  }
+
   });
 
 })();

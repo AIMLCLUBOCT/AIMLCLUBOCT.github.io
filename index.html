@@ -47,9 +47,11 @@
     "alternateName": "AIML Club OCT",
     "url": "https://aimlcluboct.github.io/",
     "logo": "https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png",
+    "foundingDate": "2025-07-09",
     "parentOrganization": {
       "@type": "CollegeOrUniversity",
       "name": "Oriental College of Technology, Bhopal",
+      "foundingDate": "2002",
       "sameAs": "https://oriental.ac.in"
     },
     "address": {
@@ -113,7 +115,7 @@
       <div class="telemetry-divider"></div>
       <div class="telemetry-segment hide-mobile">
         <span class="mono-label">AFFILIATION:</span>
-        <span class="mono-value">ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL (EST. 2025)</span>
+        <span class="mono-value">OCT BHOPAL (ESTD. 2002) • AIML CLUB (ESTD. 09 JULY 2025)</span>
       </div>
       <div class="telemetry-divider hide-mobile"></div>
       <div class="telemetry-segment">
@@ -174,11 +176,12 @@
         <a href="#learn" class="nav-item">01 Learn</a>
         <a href="#build" class="nav-item">02 Build</a>
         <a href="#research" class="nav-item">03 Research</a>
-        <a href="#activities" class="nav-item"><span class="live-dot-pulse" aria-hidden="true"></span> Activities</a>
+        <a href="#activities" class="nav-item"><span class="live-dot-pulse" aria-hidden="true"></span> 04 Activities</a>
         <a href="#events" class="nav-item">05 Events</a>
         <a href="#gallery" class="nav-item">06 Gallery</a>
         <a href="#team" class="nav-item">07 Team</a>
         <a href="#opensource" class="nav-item">08 Open Source</a>
+        <a href="#impact" class="nav-item">09 Impact</a>
       </nav>
 
       <div class="nav-controls">
@@ -372,7 +375,7 @@
                 <div class="campus-hud-overlay" aria-hidden="true">
                   <div class="hud-top-tag">
                     <span class="hud-bracket">[</span> AIML CLUB OCT <span class="hud-bracket">]</span><br>
-                    <span class="hud-sub">ESTD. 2021 • BHOPAL, INDIA</span>
+                    <span class="hud-sub">COLLEGE ESTD. 2002 // CLUB ESTD. 09 JULY 2025</span>
                   </div>
                   
                   <div class="hud-crosshair-circle">
@@ -404,7 +407,7 @@
     </section>
 
     <!-- 03. MISSION & ENGINEERING PHILOSOPHY -->
-    <section class="section-editorial" id="overview" data-section-name="PHILOSOPHY">
+    <section class="section-editorial" id="overview" data-section-name="00 ABOUT">
       <div class="container">
         
         <div class="section-header-block">
@@ -1135,6 +1138,44 @@
 
         </div>
 
+        <!-- Visual Architecture Breakdown: Transformer Lattice -->
+        <div class="research-visual-card">
+          <div class="rv-media-col">
+            <div class="rv-img-wrapper">
+              <img src="assets/transformer_lattice.jpg" alt="3D Neural Attention Lattice Visualization" class="rv-thumb" loading="lazy" />
+              <div class="rv-overlay">
+                <span class="rv-badge"><i class="fa-solid fa-microchip"></i> ARCHITECTURE AUDIT</span>
+              </div>
+            </div>
+          </div>
+          <div class="rv-content-col">
+            <div class="header-super">DEEP LEARNING FOUNDATIONS</div>
+            <h3 class="rv-title">Scaled Dot-Product Attention & Multi-Head Lattice Mechanics</h3>
+            <p class="rv-desc">
+              Students dissect the mathematical core of the Transformer architecture: query-key-value projections Attention(Q, K, V) = softmax(QK^T / sqrt(d_k))V, causal masking matrices, rotary position embeddings (RoPE), and KV-caching memory profiles for real-time edge execution.
+            </p>
+            <div class="rv-metrics-row">
+              <div class="rv-metric-box">
+                <span class="rv-metric-val">O(N²) → O(N)</span>
+                <span class="rv-metric-lbl">Complexity Bounds</span>
+              </div>
+              <div class="rv-metric-box">
+                <span class="rv-metric-val">12 Heads</span>
+                <span class="rv-metric-lbl">Parallel Projections</span>
+              </div>
+              <div class="rv-metric-box">
+                <span class="rv-metric-val">768 Dim</span>
+                <span class="rv-metric-lbl">Latent Space</span>
+              </div>
+            </div>
+            <div class="rv-actions">
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/08-transformers" target="_blank" rel="noopener noreferrer" class="btn-action-primary" data-cursor="CODE">
+                <i class="fa-brands fa-github"></i> <span>Explore Module 08 Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -1487,7 +1528,6 @@
             </div>
           </div>
 
-        </div>
 
         </div>
 
@@ -1628,14 +1668,14 @@
         </div>
 
         <!-- Department Tabs -->
-        <div class="team-tab-bar" id="team-tabs">
-          <button class="team-tab-btn active" data-team="all">All Members (41)</button>
-          <button class="team-tab-btn" data-team="leadership">Core & Faculty</button>
-          <button class="team-tab-btn" data-team="technical">Technical Wing</button>
-          <button class="team-tab-btn" data-team="events">Events & Operations</button>
-          <button class="team-tab-btn" data-team="discipline">Discipline Wing</button>
-          <button class="team-tab-btn" data-team="media">Media, PR & Design</button>
-          <button class="team-tab-btn" data-team="stage">Anchors & Stage</button>
+        <div class="team-tab-bar" id="team-tabs" role="tablist" aria-label="Team Wings">
+          <button class="team-tab-btn active" data-team="all" role="tab" aria-selected="true">All Members <span class="tab-count">41</span></button>
+          <button class="team-tab-btn" data-team="leadership" role="tab" aria-selected="false">Core & Faculty <span class="tab-count">3</span></button>
+          <button class="team-tab-btn" data-team="technical" role="tab" aria-selected="false">Technical Wing <span class="tab-count">10</span></button>
+          <button class="team-tab-btn" data-team="events" role="tab" aria-selected="false">Events & Operations <span class="tab-count">14</span></button>
+          <button class="team-tab-btn" data-team="discipline" role="tab" aria-selected="false">Discipline Wing <span class="tab-count">5</span></button>
+          <button class="team-tab-btn" data-team="media" role="tab" aria-selected="false">Media, PR & Design <span class="tab-count">6</span></button>
+          <button class="team-tab-btn" data-team="stage" role="tab" aria-selected="false">Anchors & Stage <span class="tab-count">3</span></button>
         </div>
 
         <!-- Live Search Filter -->
@@ -1652,8 +1692,6 @@
         </div>
 
         </div>
-
-      </div>
     </section>
 
     <!-- 10. SECTION 08: GITHUB ORGANIZATION & OPEN SOURCE -->
@@ -1871,7 +1909,8 @@
         <div class="footer-nav-column">
           <div class="f-col-header">CAMPUS LAB</div>
           <div class="f-address">
-            <strong>Oriental College of Technology</strong><br>
+            <strong>Oriental College of Technology</strong> <span class="mono-label">(Estd. 2002)</span><br>
+            AI & Machine Learning Club <span class="mono-label">(Estd. 09 July 2025)</span><br>
             Department of Computer Science & Engineering<br>
             Oriental Campus, Raisen Road<br>
             Bhopal, Madhya Pradesh — 462021<br>
@@ -2001,6 +2040,12 @@
       </button>
     </div>
   </div>
+
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button class="back-to-top-btn" id="back-to-top-btn" aria-label="Back to top" title="Scroll to top" data-cursor="TOP">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
 </body>
 </html>
