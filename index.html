@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <link rel="stylesheet" href="style.css?v=20261003-editorial">
+  <link rel="stylesheet" href="style.css?v=20261003-v2">
 
   <!-- Structured Data JSON-LD Schema -->
   <script type="application/ld+json">
@@ -131,6 +131,25 @@
     </div>
   </aside>
 
+  <!-- 00.5 LIVE STUDENT NOTICES & ANNOUNCEMENT STRIP -->
+  <div class="student-notice-strip" id="student-notice-strip" role="region" aria-label="Student Notices">
+    <div class="container notice-inner">
+      <div class="notice-badge">
+        <span class="pulse-ring" aria-hidden="true"></span>
+        <i class="fa-solid fa-bullhorn"></i>
+        <span>LIVE NOTICE</span>
+      </div>
+      <div class="notice-marquee">
+        <span class="notice-text" id="live-notice-headline">
+          <strong>⚡ LATEST ACTIVITY:</strong> MediaPipe Hand Tracking Lab deployed in Workshops • <strong>Hackathon 2026</strong> registrations opening for student teams!
+        </span>
+      </div>
+      <div class="notice-action">
+        <a href="#activities" class="notice-link">View Activities Feed <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
   <!-- 01. NAVIGATION HEADER -->
   <header class="header-nav" id="main-header">
     <div class="header-container">
@@ -141,8 +160,8 @@
           <img src="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png" alt="AIML Club Emblem" class="insignia-club">
         </div>
         <div class="brand-metadata">
-          <span class="brand-title">AIML LAB & COMMUNITY</span>
-          <span class="brand-sub">ORIENTAL COLLEGE OF TECHNOLOGY</span>
+          <span class="brand-title">AI & MACHINE LEARNING CLUB</span>
+          <span class="brand-sub">ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
         </div>
       </a>
 
@@ -151,11 +170,16 @@
         <a href="#learn" class="nav-item">01 Learn</a>
         <a href="#build" class="nav-item">02 Build</a>
         <a href="#research" class="nav-item">03 Research</a>
+        <a href="#activities" class="nav-item"><span class="live-dot-pulse" aria-hidden="true"></span> Activities</a>
         <a href="#connect" class="nav-item">04 Connect</a>
         <a href="#impact" class="nav-item">05 Impact</a>
       </nav>
 
       <div class="nav-controls">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme" title="Switch light/dark theme" data-cursor="THEME">
+          <i class="fa-solid fa-moon theme-icon-moon" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun theme-icon-sun" aria-hidden="true"></i>
+        </button>
         <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="btn-terminal-outline hide-mobile" id="nav-github-cta" data-cursor="CODE">
           <i class="fa-brands fa-github"></i> <span>GitHub Org</span>
         </a>
@@ -173,7 +197,10 @@
       <div class="drawer-header">
         <div class="drawer-brand">
           <img src="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png" alt="AIML Club" class="drawer-logo">
-          <span>AIML CLUB OCT</span>
+          <div class="drawer-brand-text">
+            <span class="drawer-name">AI & MACHINE LEARNING CLUB</span>
+            <span class="drawer-sub">ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
+          </div>
         </div>
         <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close menu">
           <i class="fa-solid fa-xmark"></i>
@@ -181,11 +208,19 @@
       </div>
       <div class="drawer-inner">
         <div class="drawer-meta-tag">[NAVIGATION INDEX]</div>
+        <div class="drawer-theme-toggle-row">
+          <span class="d-theme-label">Theme Appearance:</span>
+          <button class="theme-toggle-btn" id="drawer-theme-toggle" aria-label="Toggle theme appearance">
+            <i class="fa-solid fa-moon theme-icon-moon" aria-hidden="true"></i>
+            <i class="fa-solid fa-sun theme-icon-sun" aria-hidden="true"></i>
+          </button>
+        </div>
         <a href="#overview" class="drawer-link"><span class="d-num">00</span> Philosophy & Lifecycle</a>
         <a href="#learn" class="drawer-link"><span class="d-num">01</span> Learn: 12-Module Curricula & Colab</a>
         <a href="#build" class="drawer-link"><span class="d-num">02</span> Build: Verified Projects & Systems</a>
         <a href="#research" class="drawer-link"><span class="d-num">03</span> Research: Empirical Benchmarks</a>
-        <a href="#connect" class="drawer-link"><span class="d-num">04</span> Connect: Timeline & 41-Member Council</a>
+        <a href="#activities" class="drawer-link"><span class="d-num">04</span> Activities: Live Notices & Student Radar</a>
+        <a href="#connect" class="drawer-link"><span class="d-num">05</span> Connect: Timeline & 41-Member Council</a>
         <a href="#impact" class="drawer-link"><span class="d-num">05</span> Impact: Ecosystem, APK & Suggestions</a>
         
         <div class="drawer-external-links">
@@ -223,12 +258,12 @@
       <div class="container hero-content">
         
         <div class="editorial-metadata-pill reveal-stagger">
-          <span class="pill-tag">[AIML-OCT-2026]</span>
-          <span class="pill-text">DEPARTMENT OF CSE & ALLIED BRANCHES • ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
+          <span class="pill-tag">[AIML-OCT-OFFICIAL]</span>
+          <span class="pill-text">AI & MACHINE LEARNING CLUB • ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
         </div>
 
         <h1 class="hero-headline reveal-stagger">
-          Engineering the frontier of <span class="headline-em">applied artificial intelligence</span> through student research.
+          AI & Machine Learning Club <span class="headline-em">OCT Bhopal</span> — Engineering the frontier of applied intelligence.
         </h1>
 
         <!-- The 6-Phase Lifecycle Statement -->
@@ -1043,8 +1078,51 @@
       </div>
     </section>
 
-    <!-- 07. SECTION 04: CONNECT (TIMELINE & 41-MEMBER COUNCIL) -->
-    <section class="section-editorial" id="connect" data-section-name="04 CONNECT">
+    <!-- 06.5 SECTION: LIVE ACTIVITIES & REAL-TIME NOTICE BOARD -->
+    <section class="section-editorial" id="activities" data-section-name="04 ACTIVITIES">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <div class="sec-meta-tag">[REAL-TIME STUDENT RADAR]</div>
+          <div class="sec-eyebrow">04 LIVE ACTIVITIES & NOTICES</div>
+          <h2 class="sec-headline">
+            Stay synchronized with club operations. <span class="headline-em">Live activities, workshops, and releases</span>.
+          </h2>
+          <p class="sec-subtext">
+            Whenever an organizer schedules a workshop, a student commits an open-source project blueprint, or new learning materials are published, it appears right here in real-time. Students can also propose their own activities directly.
+          </p>
+        </div>
+
+        <!-- Activity Control & Filter Bar -->
+        <div class="activity-control-bar">
+          <div class="activity-filters" id="activity-filters" role="tablist" aria-label="Filter Activities">
+            <button class="filter-chip active" data-act-filter="all" role="tab" aria-selected="true">All Dispatches (<span id="count-all-act">6</span>)</button>
+            <button class="filter-chip" data-act-filter="workshop" role="tab" aria-selected="false">Workshops & Labs</button>
+            <button class="filter-chip" data-act-filter="hackathon" role="tab" aria-selected="false">Hackathons & Contests</button>
+            <button class="filter-chip" data-act-filter="code" role="tab" aria-selected="false">Code & Releases</button>
+            <button class="filter-chip" data-act-filter="announcement" role="tab" aria-selected="false">Notices</button>
+          </div>
+          
+          <div class="activity-actions">
+            <button class="btn-terminal-outline btn-sm" id="btn-refresh-feed" title="Sync live GitHub activity">
+              <i class="fa-solid fa-rotate"></i> <span>Live Sync</span>
+            </button>
+            <button class="btn-action-primary btn-sm" id="btn-propose-activity">
+              <i class="fa-solid fa-plus"></i> <span>Propose Activity</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Activity Feed Grid -->
+        <div class="activity-feed-grid" id="live-activity-feed">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 07. SECTION 05: CONNECT (TIMELINE & 41-MEMBER COUNCIL) -->
+    <section class="section-editorial" id="connect" data-section-name="05 CONNECT">
       <div class="container">
         
         <div class="section-header-block">
@@ -1477,6 +1555,80 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261003-editorial"></script>
+  <!-- PROPOSE AN ACTIVITY MODAL -->
+  <div class="activity-modal-overlay" id="activity-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-act-title">
+    <div class="activity-modal-container">
+      <div class="modal-head">
+        <div>
+          <span class="mono-label">[STUDENT SUBMISSION PORTAL]</span>
+          <h3 id="modal-act-title" class="modal-title">Propose a Club Activity or Workshop</h3>
+        </div>
+        <button class="modal-close-btn" id="modal-act-close" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <form class="modal-body" id="propose-activity-form">
+        <p class="modal-desc">
+          Have an AI topic you want to teach, a hackathon idea, or an open-source project you want the club to build together? Pitch your proposal directly to the council.
+        </p>
+        
+        <div class="form-group">
+          <label for="act-title">Activity / Session Title *</label>
+          <input type="text" id="act-title" required placeholder="e.g. Fine-Tuning Whisper for Regional Languages / Vision Hackathon" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="act-category">Category *</label>
+            <select id="act-category" required>
+              <option value="Hands-on Workshop">Hands-on Workshop</option>
+              <option value="Student Hackathon">Student Hackathon / Contest</option>
+              <option value="Open Source Project">Open Source Project Pitch</option>
+              <option value="Research Paper Discussion">Research Paper Discussion</option>
+              <option value="Industry / Alumni Session">Industry / Alumni Session</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="act-audience">Target Audience *</label>
+            <select id="act-audience" required>
+              <option value="Beginners (1st & 2nd Year)">Beginners (1st & 2nd Year)</option>
+              <option value="Intermediate ML Practitioners">Intermediate ML Practitioners</option>
+              <option value="Advanced / Research Track">Advanced / Research Track</option>
+              <option value="All Students">All Students</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="act-desc">Description & Learning Outcomes *</label>
+          <textarea id="act-desc" rows="3" required placeholder="What will students learn and build during this activity? Mention any tools or prerequisites."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="act-proposer">Your Name & Branch/Year *</label>
+            <input type="text" id="act-proposer" required placeholder="e.g. Rahul Sharma, CSE 3rd Year" />
+          </div>
+          <div class="form-group">
+            <label for="act-contact">WhatsApp / GitHub / Email *</label>
+            <input type="text" id="act-contact" required placeholder="e.g. +91 9876543210 or @username" />
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-action-minimal" id="modal-act-cancel">Cancel</button>
+          <button type="submit" class="btn-action-primary">
+            <i class="fa-solid fa-paper-plane"></i> <span>Submit to Club Leads</span>
+          </button>
+        </div>
+        <div class="modal-success-msg" id="modal-success-msg" style="display: none;">
+          <i class="fa-solid fa-circle-check text-emerald"></i>
+          <span>Thank you! Your proposal has been prepared. Forwarding to the AIML Club Council...</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js?v=20261003-v2"></script>
 </body>
 </html>

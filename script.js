@@ -882,6 +882,332 @@
     });
   }
 
+
+  // 11. Theme Appearance Toggle (Light / Dark)
+  function initThemeToggle() {
+    const desktopToggle = document.getElementById('theme-toggle');
+    const drawerToggle = document.getElementById('drawer-theme-toggle');
+
+    // Retrieve saved theme or evaluate system preference
+    const savedTheme = localStorage.getItem('aiml_theme');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    let currentTheme = savedTheme || (prefersLight ? 'light' : 'dark');
+
+    function applyTheme(theme) {
+      currentTheme = theme;
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.body.classList.add('theme-light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        document.body.classList.remove('theme-light');
+      }
+      localStorage.setItem('aiml_theme', theme);
+      if (desktopToggle) {
+        desktopToggle.setAttribute('title', theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+      }
+    }
+
+    applyTheme(currentTheme);
+
+    function toggle() {
+      applyTheme(currentTheme === 'light' ? 'dark' : 'light');
+    }
+
+    if (desktopToggle) desktopToggle.addEventListener('click', toggle);
+    if (drawerToggle) drawerToggle.addEventListener('click', toggle);
+  }
+
+  // 12. Dynamic Student Activity Radar & Real-Time Notices
+  function initStudentActivityRadar() {
+    const feedContainer = document.getElementById('live-activity-feed');
+    const filterContainer = document.getElementById('activity-filters');
+    const refreshBtn = document.getElementById('btn-refresh-feed');
+    const headlineEl = document.getElementById('live-notice-headline');
+    const totalCountEl = document.getElementById('count-all-act');
+
+    if (!feedContainer) return;
+
+    let activities = [
+      {
+        id: 'act-01',
+        type: 'workshop',
+        badge: 'LIVE WORKSHOP LAB',
+        statusClass: 'status-live',
+        date: 'October 2026',
+        title: 'Hands-on MediaPipe Computer Vision & Hand Landmark Tracking Lab',
+        host: 'Kinshuk Verma (Tech Lead) & Technical Council',
+        venue: 'OCT Computer Lab 4 & Colab GPU Cloud',
+        desc: 'Production-ready notebook covering real-time 21 3D hand landmarks, finger state classification, and multi-threaded OpenCV webcam pipelines.',
+        links: [
+          { text: 'Launch Colab Lab', url: 'https://github.com/AIMLCLUBOCT/Workshops', icon: 'fa-solid fa-flask', btnClass: 'btn-action-primary' },
+          { text: 'View Repo', url: 'https://github.com/AIMLCLUBOCT/Workshops', icon: 'fa-brands fa-github', btnClass: 'btn-terminal-outline' }
+        ]
+      },
+      {
+        id: 'act-02',
+        type: 'hackathon',
+        badge: 'REGISTRATIONS OPEN',
+        statusClass: 'status-upcoming',
+        date: 'November 2026',
+        title: 'OCT AI Innovate 2026: Campus Applied Intelligence Hackathon',
+        host: 'Gourav Jain, Aarchi Sharma & Event Operations Wing',
+        venue: 'Oriental Auditorium & Computer Center',
+        desc: '36-hour inter-branch hackathon challenging student engineering teams to build production AI systems for campus automation, healthcare, and safety.',
+        links: [
+          { text: 'Register Team', url: 'https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6', icon: 'fa-brands fa-whatsapp', btnClass: 'btn-cobalt-solid' },
+          { text: 'Guidelines', url: 'https://github.com/AIMLCLUBOCT/EVENTS', icon: 'fa-solid fa-file-lines', btnClass: 'btn-terminal-outline' }
+        ]
+      },
+      {
+        id: 'act-03',
+        type: 'code',
+        badge: 'NEW BLUEPRINT MERGED',
+        statusClass: 'status-code',
+        date: 'October 2026',
+        title: 'Dual-Mode Phishing & Spam Message Classifier Committed to Projects',
+        host: 'AIML Club OCT Open-Source Team',
+        venue: 'AIMLCLUBOCT/Projects',
+        desc: 'Deployed dual-mode classifier combining Scikit-Learn TF-IDF + MultinomialNB with an offline pure Python mathematical engine for low-compute devices.',
+        links: [
+          { text: 'Inspect Code', url: 'https://github.com/AIMLCLUBOCT/Projects/tree/main/beginner/phishing-spam-detector', icon: 'fa-brands fa-github', btnClass: 'btn-action-primary' }
+        ]
+      },
+      {
+        id: 'act-04',
+        type: 'workshop',
+        badge: 'COLAB NOTEBOOK',
+        statusClass: 'status-code',
+        date: 'September 2026',
+        title: 'Retrieval-Augmented Generation (RAG) & Vector Database Tutorial',
+        host: 'Umesh Patel & Technical Council',
+        venue: 'AIMLCLUBOCT/Workshops/advanced',
+        desc: 'End-to-end cloud GPU tutorial detailing text chunking, FAISS index construction, embeddings similarity metrics, and LLM synthesis.',
+        links: [
+          { text: 'Run in Colab', url: 'https://github.com/AIMLCLUBOCT/Workshops/tree/main/advanced', icon: 'fa-solid fa-code', btnClass: 'btn-action-primary' }
+        ]
+      },
+      {
+        id: 'act-05',
+        type: 'announcement',
+        badge: 'COMMUNITY RELEASE',
+        statusClass: 'status-announcement',
+        date: 'Active Release',
+        title: 'Official AIML Club Android App & APK Archive Available for Download',
+        host: 'Technical Wing & Operations',
+        venue: 'Google Drive APK Distribution',
+        desc: 'Official club companion Android application with real-time push announcements, workshop timetables, and offline resource syllabus.',
+        links: [
+          { text: 'Download APK', url: 'https://drive.google.com/drive/folders/1xRzPHXexGDH9ggROAhSjkI2hPsdRcE9F?usp=sharing', icon: 'fa-brands fa-android', btnClass: 'btn-action-secondary' }
+        ]
+      },
+      {
+        id: 'act-06',
+        type: 'hackathon',
+        badge: 'OPEN ISSUES',
+        statusClass: 'status-live',
+        date: 'Active Sprint',
+        title: 'October Open-Source Sprint: Good First Issues Open for Undergraduates',
+        host: 'Mentorship Council',
+        venue: 'GitHub Organization Repositories',
+        desc: 'Beginner-friendly repository tickets in Python algorithms, data visualization, and test suites. Mentors review and merge student pull requests.',
+        links: [
+          { text: 'Explore Issues', url: 'https://github.com/issues?q=is%3Aissue+is%3Aopen+org%3AAIMLCLUBOCT+label%3A%22good+first+issue%22', icon: 'fa-brands fa-github', btnClass: 'btn-action-primary' }
+        ]
+      }
+    ];
+
+    let currentFilter = 'all';
+
+    function renderFeed() {
+      const filtered = activities.filter(function (act) {
+        if (currentFilter === 'all') return true;
+        return act.type === currentFilter;
+      });
+
+      if (totalCountEl) totalCountEl.textContent = activities.length;
+
+      feedContainer.innerHTML = filtered.map(function (act) {
+        const linkBtns = act.links.map(function (l) {
+          return `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="${l.btnClass} btn-xs" data-cursor="VIEW">
+            <i class="${l.icon}"></i> <span>${l.text}</span>
+          </a>`;
+        }).join('');
+
+        return `
+          <article class="activity-card" data-category="${act.type}">
+            <div>
+              <div class="act-card-head">
+                <span class="act-badge ${act.statusClass}">${act.badge}</span>
+                <span class="act-date">${act.date}</span>
+              </div>
+              <h3 class="act-title">${act.title}</h3>
+              <div class="act-meta-info">
+                <span><i class="fa-solid fa-user-tie"></i> ${act.host}</span>
+                <span><i class="fa-solid fa-location-dot"></i> ${act.venue}</span>
+              </div>
+              <p class="act-desc">${act.desc}</p>
+            </div>
+            <div class="act-card-actions">
+              ${linkBtns}
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    renderFeed();
+
+    // Filter chip listeners
+    if (filterContainer) {
+      filterContainer.addEventListener('click', function (e) {
+        const btn = e.target.closest('.filter-chip');
+        if (!btn) return;
+        const filter = btn.getAttribute('data-act-filter');
+        currentFilter = filter;
+        filterContainer.querySelectorAll('.filter-chip').forEach(function (c) {
+          c.classList.remove('active');
+          c.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        renderFeed();
+      });
+    }
+
+    // Live Sync with GitHub Organization Events API
+    function syncLiveGitHubEvents() {
+      if (refreshBtn) {
+        refreshBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Syncing...</span>';
+      }
+
+      fetch('https://api.github.com/orgs/AIMLCLUBOCT/events?per_page=6')
+        .then(function (res) { return res.json(); })
+        .then(function (events) {
+          if (Array.isArray(events) && events.length > 0) {
+            const gitHubActivities = events.slice(0, 3).map(function (ev, idx) {
+              const repoName = ev.repo ? ev.repo.name.replace('AIMLCLUBOCT/', '') : 'Repository';
+              let actionTitle = 'Live Code Update on ' + repoName;
+              let actionDesc = 'Recent activity detected in the AIML Club OCT engineering organization.';
+              let actType = 'code';
+
+              if (ev.type === 'PushEvent') {
+                const commitMsg = ev.payload && ev.payload.commits && ev.payload.commits[0] ? ev.payload.commits[0].message.split('\n')[0] : 'Code enhancements pushed';
+                actionTitle = 'Git Push: ' + commitMsg;
+                actionDesc = `New commit pushed to ${repoName} by @${ev.actor ? ev.actor.login : 'contributor'}.`;
+              } else if (ev.type === 'CreateEvent') {
+                actionTitle = 'New Branch / Tag created on ' + repoName;
+                actionDesc = `Ref created by @${ev.actor ? ev.actor.login : 'developer'}.`;
+              } else if (ev.type === 'IssuesEvent') {
+                actionTitle = 'Issue ' + (ev.payload.action || 'updated') + ' on ' + repoName;
+                actionDesc = ev.payload.issue ? ev.payload.issue.title : 'Organization issue activity';
+                actType = 'hackathon';
+              }
+
+              return {
+                id: 'gh-' + ev.id,
+                type: actType,
+                badge: 'LIVE GITHUB SYNC',
+                statusClass: 'status-live',
+                date: 'Just Recently',
+                title: actionTitle,
+                host: '@' + (ev.actor ? ev.actor.login : 'AIMLCLUBOCT'),
+                venue: repoName,
+                desc: actionDesc,
+                links: [
+                  { text: 'View on GitHub', url: `https://github.com/${ev.repo ? ev.repo.name : 'AIMLCLUBOCT'}`, icon: 'fa-brands fa-github', btnClass: 'btn-action-primary' }
+                ]
+              };
+            });
+
+            // Prepend new GitHub live items if not already added
+            const existingIds = new Set(activities.map(a => a.id));
+            const freshItems = gitHubActivities.filter(a => !existingIds.has(a.id));
+            if (freshItems.length > 0) {
+              activities = freshItems.concat(activities);
+              renderFeed();
+              if (headlineEl && activities[0]) {
+                headlineEl.innerHTML = `<strong>⚡ LIVE DISPATCH:</strong> ${activities[0].title} • Click to explore live student activities!`;
+              }
+            }
+          }
+        })
+        .catch(function () {})
+        .finally(function () {
+          if (refreshBtn) {
+            refreshBtn.innerHTML = '<i class="fa-solid fa-rotate"></i> <span>Live Sync</span>';
+          }
+        });
+    }
+
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', syncLiveGitHubEvents);
+    }
+
+    // Run background sync once on load
+    setTimeout(syncLiveGitHubEvents, 1200);
+  }
+
+  // 13. Propose an Activity Modal Dialog
+  function initProposeActivityModal() {
+    const openBtn = document.getElementById('btn-propose-activity');
+    const modal = document.getElementById('activity-modal');
+    const closeBtn = document.getElementById('modal-act-close');
+    const cancelBtn = document.getElementById('modal-act-cancel');
+    const form = document.getElementById('propose-activity-form');
+    const successMsg = document.getElementById('modal-success-msg');
+
+    if (!modal) return;
+
+    function openModal() {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (successMsg) successMsg.style.display = 'none';
+      if (form) form.reset();
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const title = document.getElementById('act-title').value.trim();
+        const category = document.getElementById('act-category').value;
+        const audience = document.getElementById('act-audience').value;
+        const desc = document.getElementById('act-desc').value.trim();
+        const proposer = document.getElementById('act-proposer').value.trim();
+        const contact = document.getElementById('act-contact').value.trim();
+
+        // Format message for WhatsApp / Club leads
+        const message = `*AIML Club OCT — Student Activity Proposal*%0A%0A*Title:* ${encodeURIComponent(title)}%0A*Category:* ${encodeURIComponent(category)}%0A*Target Audience:* ${encodeURIComponent(audience)}%0A*Description:* ${encodeURIComponent(desc)}%0A*Proposed by:* ${encodeURIComponent(proposer)}%0A*Contact:* ${encodeURIComponent(contact)}`;
+
+        if (successMsg) successMsg.style.display = 'flex';
+
+        setTimeout(function () {
+          // Open WhatsApp or community discussions pre-filled
+          const waUrl = `https://wa.me/919876543210?text=${message}`;
+          const discussionUrl = `https://github.com/AIMLCLUBOCT/learning_resources/discussions/new?category=q-a&title=${encodeURIComponent('[Proposal] ' + title)}&body=${encodeURIComponent(desc + '\n\nProposed by: ' + proposer + ' (' + contact + ')')}`;
+          
+          window.open(discussionUrl, '_blank');
+          setTimeout(closeModal, 1800);
+        }, 800);
+      });
+    }
+  }
+
   // Initialize all subsystems on DOM ready
   document.addEventListener('DOMContentLoaded', function () {
     initLiveClock();
@@ -894,6 +1220,9 @@
     initTeamDirectory();
     initMobileDrawer();
     initCopyButton();
+    initThemeToggle();
+    initStudentActivityRadar();
+    initProposeActivityModal();
   });
 
 })();
