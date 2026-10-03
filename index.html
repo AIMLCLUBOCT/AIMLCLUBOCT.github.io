@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI & Machine Learning Club | Oriental College of Technology, Bhopal</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Official AI & Machine Learning Club of Oriental College of Technology (OCT), Bhopal. Explore structured 0-to-1 AI/ML curricula, interactive Google Colab workshops, open-source projects, and student hackathons.">
+  <meta name="keywords" content="AIML Club OCT, Oriental College of Technology, AI Club Bhopal, Machine Learning Bhopal, OCT AI ML, Python for AI, Deep Learning, GenAI, PyTorch, Scikit-Learn, Student Tech Community">
+  <meta name="author" content="AIML Club OCT - Technical Team & Umesh Patel">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aimlcluboct.github.io/">
+
+  <!-- OpenGraph Metadata for Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIML Club OCT">
+  <meta property="og:title" content="AI & Machine Learning Club | Oriental College of Technology, Bhopal">
+  <meta property="og:description" content="Democratizing Artificial Intelligence education through hands-on engineering, open-source code, and peer-to-peer technical mentorship.">
+  <meta property="og:url" content="https://aimlcluboct.github.io/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIML Club - Oriental College of Technology, Bhopal">
+  <meta name="twitter:description" content="Explore AI/ML roadmaps, Colab workshop notebooks, student project repositories, and technical hackathons.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png">
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data JSON-LD Schema for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "AI & Machine Learning Club, Oriental College of Technology",
+    "alternateName": "AIML Club OCT",
+    "url": "https://aimlcluboct.github.io/",
+    "logo": "https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png",
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": "Oriental College of Technology, Bhopal"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Oriental Campus, Raisen Road",
+      "addressLocality": "Bhopal",
+      "addressRegion": "Madhya Pradesh",
+      "postalCode": "462021",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://aimlcluboct.in",
+      "https://social.aimlcluboct.in",
+      "https://github.com/AIMLCLUBOCT",
+      "https://www.linkedin.com/company/aimlcluboct",
+      "https://www.instagram.com/aimlcluboct"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Background Animated Mesh Gradient & Particles -->
+  <div class="glow-bg-mesh" aria-hidden="true">
+    <div class="mesh-orb orb-1"></div>
+    <div class="mesh-orb orb-2"></div>
+    <div class="mesh-orb orb-3"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar" id="main-header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-link" id="brand-logo-link" aria-label="AIML Club OCT Home">
+        <img src="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/oct_college_logo.png" alt="OCT Logo" class="brand-logo college-logo">
+        <div class="brand-divider"></div>
+        <img src="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png" alt="AIML Club Logo" class="brand-logo club-logo">
+        <div class="brand-text">
+          <span class="brand-title">AIML CLUB</span>
+          <span class="brand-subtitle">OCT BHOPAL</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="#about" class="nav-link" id="nav-about">About</a>
+        <a href="#curriculum" class="nav-link" id="nav-curriculum">Curriculum</a>
+        <a href="#projects" class="nav-link" id="nav-projects">Projects</a>
+        <a href="#workshops" class="nav-link" id="nav-workshops">Workshops</a>
+        <a href="#events" class="nav-link" id="nav-events">Events</a>
+        <a href="#team" class="nav-link" id="nav-team">Leadership</a>
+        <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="nav-link nav-github" id="nav-github-link" aria-label="Visit AIML Club on GitHub">
+          <i class="fa-brands fa-github"></i> <span>GitHub</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-join-community">
+          <i class="fa-brands fa-whatsapp"></i> <span>Join Community</span>
+        </a>
+        <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        
+        <div class="hero-pill-badge" id="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">Official AI & ML Club • Oriental College of Technology</span>
+        </div>
+
+        <h1 class="hero-title" id="hero-main-title">
+          Innovate. Implement.<br>
+          <span class="gradient-text typing-text" id="typing-tagline">Inspire with AI.</span>
+        </h1>
+
+        <p class="hero-description" id="hero-lead-text">
+          Bridging classroom mathematics and industry-grade engineering. A student-led open source ecosystem building real-world machine learning models, autonomous agents, and computer vision systems.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#curriculum" class="btn btn-hero-primary" id="hero-cta-curriculum">
+            <i class="fa-solid fa-graduation-cap"></i> <span>Explore Curricula</span>
+          </a>
+          <a href="#projects" class="btn btn-hero-secondary" id="hero-cta-projects">
+            <i class="fa-solid fa-code-fork"></i> <span>Browse Projects</span>
+          </a>
+          <a href="https://github.com/orgs/AIMLCLUBOCT/projects/2" target="_blank" rel="noopener noreferrer" class="btn btn-hero-ghost" id="hero-cta-roadmap">
+            <i class="fa-solid fa-compass"></i> <span>Live Kanban</span>
+          </a>
+        </div>
+
+        <!-- Live Animated Stats Metrics -->
+        <div class="hero-stats-grid" id="stats-banner">
+          <div class="stat-card" id="stat-modules">
+            <div class="stat-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+            <div class="stat-value" data-count="12">12+</div>
+            <div class="stat-label">Learning Modules</div>
+          </div>
+          <div class="stat-card" id="stat-workshops">
+            <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="stat-value" data-count="4">4</div>
+            <div class="stat-label">Colab Workshops</div>
+          </div>
+          <div class="stat-card" id="stat-projects">
+            <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
+            <div class="stat-value" data-count="10">10+</div>
+            <div class="stat-label">Starters & Blueprints</div>
+          </div>
+          <div class="stat-card" id="stat-events">
+            <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="stat-value" data-count="11">11+</div>
+            <div class="stat-label">Archived Events</div>
+          </div>
+          <div class="stat-card" id="stat-members">
+            <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="stat-value" data-count="300">300+</div>
+            <div class="stat-label">Student Community</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">WHO WE ARE</span>
+          <h2 class="section-title">A Community Driven by Real Engineering</h2>
+          <p class="section-description">
+            We reject passive link dumps. Every module, workshop, and repository is designed for hands-on execution, peer code review, and reproducible deployment.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3 class="pillar-title">Learn by Doing</h3>
+            <p class="pillar-text">
+              Theoretical math paired directly with PyTorch, Scikit-Learn, and FastAPI production pipelines.
+            </p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-code-merge"></i></div>
+            <h3 class="pillar-title">Open Source First</h3>
+            <p class="pillar-text">
+              Every student project, workshop code, and event archive is maintained transparently on GitHub under OSI licenses.
+            </p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-stairs"></i></div>
+            <h3 class="pillar-title">Zero to Frontier</h3>
+            <p class="pillar-text">
+              Clear progressive paths starting from 1st-year Python syntax up to autonomous multi-agent reasoning systems.
+            </p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-trophy"></i></div>
+            <h3 class="pillar-title">Hackathon Culture</h3>
+            <p class="pillar-text">
+              High-intensity building sprints solving real problems in computer vision, security, and student automation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRICULUM SECTION -->
+    <section class="section curriculum-section" id="curriculum">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">STRUCTURED SYLLABI</span>
+          <h2 class="section-title">12-Module Progressive AI/ML Curriculum</h2>
+          <p class="section-description">
+            Maintained in <a href="https://github.com/AIMLCLUBOCT/learning_resources" target="_blank" rel="noopener noreferrer">AIMLCLUBOCT/learning_resources</a>. Completely free, verified, and sequenced for undergraduate engineering students.
+          </p>
+        </div>
+
+        <div class="modules-grid" id="curriculum-grid">
+          
+          <div class="module-card">
+            <div class="module-number">00</div>
+            <div class="module-content">
+              <h3 class="module-title">Roadmaps</h3>
+              <p class="module-desc">Beginner, Comprehensive AI/ML, and Research tracks for 1st to 4th year students.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/00-roadmap" target="_blank" rel="noopener noreferrer" class="module-link">View Track <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">01</div>
+            <div class="module-content">
+              <h3 class="module-title">Python for AI</h3>
+              <p class="module-desc">Python 3.10+, OOP, NumPy vectorized computing, broadcasting, virtual environments.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/01-python" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">02</div>
+            <div class="module-content">
+              <h3 class="module-title">Mathematics for ML</h3>
+              <p class="module-desc">Linear algebra, matrix decomposition, multivariate calculus, probability & Bayes' Theorem.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/02-mathematics" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">03</div>
+            <div class="module-content">
+              <h3 class="module-title">Data Science & EDA</h3>
+              <p class="module-desc">Pandas DataFrame wrangling, missing data imputation, Seaborn/Matplotlib visualization.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/03-data-science" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">04</div>
+            <div class="module-content">
+              <h3 class="module-title">Machine Learning</h3>
+              <p class="module-desc">Scikit-Learn, Random Forests, Logistic Regression, cross-validation, and metrics.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/04-machine-learning" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">05</div>
+            <div class="module-content">
+              <h3 class="module-title">Deep Learning</h3>
+              <p class="module-desc">Backpropagation, CNNs for vision, RNNs/LSTMs, PyTorch neural network training loops.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/05-deep-learning" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">06</div>
+            <div class="module-content">
+              <h3 class="module-title">Generative AI & LLMs</h3>
+              <p class="module-desc">Transformers, Attention mechanisms, RAG pipelines, ChromaDB vector indexing, Hugging Face.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/06-generative-ai" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">07</div>
+            <div class="module-content">
+              <h3 class="module-title">AI Agents & MCP</h3>
+              <p class="module-desc">Model Context Protocol (MCP), FastMCP servers, tool-use execution, and LangGraph loops.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/07-ai-agents" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">08</div>
+            <div class="module-content">
+              <h3 class="module-title">Computer Vision</h3>
+              <p class="module-desc">OpenCV image filtering, MediaPipe real-time hand/pose landmarks, YOLO object detection.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/08-computer-vision" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">09</div>
+            <div class="module-content">
+              <h3 class="module-title">NLP & Text</h3>
+              <p class="module-desc">TF-IDF vectorization, tokenization, BERT sentiment analysis, Naive Bayes classifiers.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/09-nlp" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">10</div>
+            <div class="module-content">
+              <h3 class="module-title">Research & Papers</h3>
+              <p class="module-desc">Methodical ArXiv paper reading, Karpathy's AutoResearch, experimental reproducibility.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/10-research" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="module-card">
+            <div class="module-number">11</div>
+            <div class="module-content">
+              <h3 class="module-title">Tools & MLOps</h3>
+              <p class="module-desc">Git/GitHub, Docker containers, Streamlit UIs, FastAPI endpoints, Firecrawl web agents.</p>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/11-tools" target="_blank" rel="noopener noreferrer" class="module-link">View Module <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOPS SECTION -->
+    <section class="section workshops-section" id="workshops">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">INTERACTIVE LABS</span>
+          <h2 class="section-title">Hands-On Workshops (Run in Google Colab)</h2>
+          <p class="section-description">
+            Zero setup required. Run these notebooks directly in your browser with free GPU acceleration.
+          </p>
+        </div>
+
+        <div class="workshops-grid">
+          
+          <div class="workshop-card">
+            <div class="workshop-badge">Lab 01</div>
+            <h3 class="workshop-title">Python for AI & Vectorized Computing</h3>
+            <p class="workshop-desc">Master NumPy array vectorization, broadcasting rules, matrix math, and vectorized operations.</p>
+            <div class="workshop-actions">
+              <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/notebooks/01_python_numpy_basics.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-colab">
+                <i class="fa-solid fa-play"></i> <span>Open in Colab</span>
+              </a>
+              <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/notebooks/01_python_numpy_basics.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-code">
+                <i class="fa-brands fa-github"></i> <span>View Code</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="workshop-card">
+            <div class="workshop-badge">Lab 02</div>
+            <h3 class="workshop-title">EDA & Visual Storytelling</h3>
+            <p class="workshop-desc">Pandas DataFrame manipulation, handling null values, exploratory statistics, and Seaborn charts.</p>
+            <div class="workshop-actions">
+              <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/notebooks/02_exploratory_data_analysis.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-colab">
+                <i class="fa-solid fa-play"></i> <span>Open in Colab</span>
+              </a>
+              <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/notebooks/02_exploratory_data_analysis.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-code">
+                <i class="fa-brands fa-github"></i> <span>View Code</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="workshop-card">
+            <div class="workshop-badge">Lab 03</div>
+            <h3 class="workshop-title">Intro to Machine Learning</h3>
+            <p class="workshop-desc">Supervised classification intuition, train/test splitting, training Decision Trees, and reading confusion matrices.</p>
+            <div class="workshop-actions">
+              <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/notebooks/03_intro_machine_learning.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-colab">
+                <i class="fa-solid fa-play"></i> <span>Open in Colab</span>
+              </a>
+              <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/notebooks/03_intro_machine_learning.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-code">
+                <i class="fa-brands fa-github"></i> <span>View Code</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="workshop-card">
+            <div class="workshop-badge">Lab 04</div>
+            <h3 class="workshop-title">NLP & Sentiment Analysis</h3>
+            <p class="workshop-desc">Text tokenization, TF-IDF n-grams, Multinomial Naive Bayes classification, and interactive predictions.</p>
+            <div class="workshop-actions">
+              <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/notebooks/04_nlp_sentiment_analysis.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-colab">
+                <i class="fa-solid fa-play"></i> <span>Open in Colab</span>
+              </a>
+              <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/notebooks/04_nlp_sentiment_analysis.ipynb" target="_blank" rel="noopener noreferrer" class="btn btn-code">
+                <i class="fa-brands fa-github"></i> <span>View Code</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">FEATURED INITIATIVES</span>
+          <h2 class="section-title">Open Source Starter Projects</h2>
+          <p class="section-description">
+            Tested, documented, and ready for student contributions in <a href="https://github.com/AIMLCLUBOCT/Projects" target="_blank" rel="noopener noreferrer">AIMLCLUBOCT/Projects</a>.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <div class="project-card">
+            <div class="project-header">
+              <span class="project-tag tag-beginner">Beginner</span>
+              <span class="project-domain">Natural Language Processing</span>
+            </div>
+            <h3 class="project-name">Phishing & Spam Message Classifier</h3>
+            <p class="project-desc">
+              Detects fraudulent SMS and banking scams using TF-IDF and Naive Bayes with dual-mode execution (zero external dependencies fallback).
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Scikit-Learn</span>
+              <span>TF-IDF</span>
+              <span>Naive Bayes</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/AIMLCLUBOCT/Projects/tree/main/beginner/phishing-spam-detector" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+              <a href="https://github.com/AIMLCLUBOCT/Projects/issues/7" target="_blank" rel="noopener noreferrer" class="project-issue-link">
+                <i class="fa-solid fa-circle-dot"></i> Issue #7 (Streamlit UI)
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <span class="project-tag tag-beginner">Beginner</span>
+              <span class="project-domain">Tabular ML</span>
+            </div>
+            <h3 class="project-name">Student Academic Risk Predictor</h3>
+            <p class="project-desc">
+              Identifies students requiring academic mentoring before semester exams using Random Forests, logistic regression, and feature importance.
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Random Forest</span>
+              <span>Pandas</span>
+              <span>Feature Ranking</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/AIMLCLUBOCT/Projects/tree/main/beginner/student-performance-predictor" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+              <a href="https://github.com/AIMLCLUBOCT/Projects/issues/8" target="_blank" rel="noopener noreferrer" class="project-issue-link">
+                <i class="fa-solid fa-circle-dot"></i> Issue #8 (Feedback Sentiment)
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <span class="project-tag tag-intermediate">Intermediate</span>
+              <span class="project-domain">Computer Vision</span>
+            </div>
+            <h3 class="project-name">Safety Helmet & Gear Detector</h3>
+            <p class="project-desc">
+              Real-time computer vision pipeline utilizing YOLOv8 object detection with educational IoU simulation and bounding box overlap parsing.
+            </p>
+            <div class="project-tech">
+              <span>YOLOv8</span>
+              <span>OpenCV</span>
+              <span>PyTorch</span>
+              <span>Edge AI</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/AIMLCLUBOCT/Projects/tree/main/intermediate/safety-helmet-detector" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <span class="project-tag tag-advanced">Advanced</span>
+              <span class="project-domain">Generative AI</span>
+            </div>
+            <h3 class="project-name">Campus Ordinance RAG Assistant</h3>
+            <p class="project-desc">
+              Retrieval-Augmented Generation assistant indexing college ordinances, grading criteria, and lab rules with cosine similarity retrieval.
+            </p>
+            <div class="project-tech">
+              <span>RAG</span>
+              <span>Vector Search</span>
+              <span>LangChain</span>
+              <span>ChromaDB</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/AIMLCLUBOCT/Projects/tree/main/advanced/campus-rag-assistant" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS TIMELINE SECTION -->
+    <section class="section events-section" id="events">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">COMMUNITY HISTORY</span>
+          <h2 class="section-title">Archived Events & Hackathons</h2>
+          <p class="section-description">
+            Archived in <a href="https://github.com/AIMLCLUBOCT/EVENTS" target="_blank" rel="noopener noreferrer">AIMLCLUBOCT/EVENTS</a> and backed by high-resolution Google Drive media archives.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">January 2026</span>
+              <h3 class="timeline-title">Intro to Machine Learning Workshop & Orientation</h3>
+              <p class="timeline-text">Comprehensive zero-to-one bootcamp for 1st-year students covering core AI algorithms, environment setup, and GitHub contributions.</p>
+              <a href="https://github.com/AIMLCLUBOCT/EVENTS/tree/main/2026/2026-01-21-intro-to-machine-learning" target="_blank" rel="noopener noreferrer" class="timeline-link">View Archive <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2026</span>
+              <h3 class="timeline-title">Aptify 2.0 & CSC 2026 Conventions</h3>
+              <p class="timeline-text">Advanced algorithm sprint, winners felicitation, and student technical exhibits during the annual technical convention.</p>
+              <a href="https://github.com/AIMLCLUBOCT/EVENTS/tree/main/2026/aptify-2.0" target="_blank" rel="noopener noreferrer" class="timeline-link">View Archive <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">September 2025</span>
+              <h3 class="timeline-title">3-Day Foundational AI/ML Bootcamp</h3>
+              <p class="timeline-text">Deep dive into data processing, neural networks, and model building with participant certificates and code labs.</p>
+              <a href="https://github.com/AIMLCLUBOCT/EVENTS/tree/main/2025/10-12-sep-workshop" target="_blank" rel="noopener noreferrer" class="timeline-link">View Archive <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2025</span>
+              <h3 class="timeline-title">Official Club Inauguration & Charter Launch</h3>
+              <p class="timeline-text">Formal establishment of the AI & Machine Learning Club at Oriental College of Technology, Bhopal.</p>
+              <a href="https://github.com/AIMLCLUBOCT/EVENTS/tree/main/2025/club-inauguration" target="_blank" rel="noopener noreferrer" class="timeline-link">View Archive <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP & TEAM SECTION -->
+    <section class="section team-section" id="team">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">CORE LEADERSHIP</span>
+          <h2 class="section-title">Mentors & Student Coordinators</h2>
+          <p class="section-description">
+            Dedicated faculty and student architects guiding technical excellence at OCT Bhopal.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar-wrapper">
+              <div class="team-avatar-placeholder"><i class="fa-solid fa-chalkboard-user"></i></div>
+            </div>
+            <h3 class="team-name">Prof. Shamaila Khan</h3>
+            <span class="team-role">Faculty Coordinator</span>
+            <p class="team-dept">Dept. of Computer Science & Engineering</p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar-wrapper">
+              <div class="team-avatar-placeholder"><i class="fa-solid fa-crown"></i></div>
+            </div>
+            <h3 class="team-name">Vishal Kumar</h3>
+            <span class="team-role">President</span>
+            <p class="team-dept">AIML Club Leadership</p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar-wrapper">
+              <div class="team-avatar-placeholder"><i class="fa-solid fa-laptop-code"></i></div>
+            </div>
+            <h3 class="team-name">Umesh Patel</h3>
+            <span class="team-role">Vice President & System Architect</span>
+            <p class="team-dept">Cloud & Digital Infrastructure</p>
+            <a href="https://github.com/UmeshCode1" target="_blank" rel="noopener noreferrer" class="team-social-link"><i class="fa-brands fa-github"></i> @UmeshCode1</a>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar-wrapper">
+              <div class="team-avatar-placeholder"><i class="fa-solid fa-code"></i></div>
+            </div>
+            <h3 class="team-name">Kinshuk Verma</h3>
+            <span class="team-role">Tech Lead</span>
+            <p class="team-dept">Technical Architecture & Labs</p>
+          </div>
+        </div>
+
+        <div class="team-footer-cta">
+          <a href="https://aimlcluboct.in/team" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>Meet the Full 30+ Member Team on aimlcluboct.in/team</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY & DISCUSSIONS CTA -->
+    <section class="section community-cta-section" id="community">
+      <div class="section-container">
+        <div class="cta-banner">
+          <div class="cta-content">
+            <h2 class="cta-title">Join 300+ Students Shaping the Future of AI</h2>
+            <p class="cta-desc">
+              Share your project prototypes, get peer code reviews, discuss reasoning models, and find hackathon teammates in our GitHub Discussions forum.
+            </p>
+            <div class="cta-btn-group">
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/discussions/9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <i class="fa-solid fa-rocket"></i> <span>Showcase Your Project</span>
+              </a>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources/discussions/10" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <i class="fa-solid fa-briefcase"></i> <span>Career & Portfolio Guide</span>
+              </a>
+              <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp Community</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand-column">
+        <div class="footer-brand">
+          <img src="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png" alt="AIML Club Logo" class="footer-logo">
+          <div>
+            <h3 class="footer-title">AI & Machine Learning Club</h3>
+            <p class="footer-subtitle">Oriental College of Technology, Bhopal</p>
+          </div>
+        </div>
+        <p class="footer-tagline">“Innovate • Implement • Inspire”</p>
+        <p class="footer-campus">Campus: Raisen Road, Bhopal, Madhya Pradesh, India 462021</p>
+        <div class="footer-socials">
+          <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" aria-label="Official Website"><i class="fa-solid fa-globe"></i></a>
+          <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/company/aimlcluboct" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/aimlcluboct" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://social.aimlcluboct.in" target="_blank" rel="noopener noreferrer" aria-label="Digital Hub"><i class="fa-solid fa-link"></i></a>
+          <a href="https://voice.aimlcluboct.in" target="_blank" rel="noopener noreferrer" aria-label="Feedback Portal"><i class="fa-solid fa-comment-dots"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-column">
+        <h4 class="footer-heading">Ecosystem Portals</h4>
+        <ul class="footer-links">
+          <li><a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer">Official Website</a></li>
+          <li><a href="https://social.aimlcluboct.in" target="_blank" rel="noopener noreferrer">Digital Social Hub</a></li>
+          <li><a href="https://live.aimlcluboct.in" target="_blank" rel="noopener noreferrer">Real-Time Live Updates</a></li>
+          <li><a href="https://voice.aimlcluboct.in" target="_blank" rel="noopener noreferrer">Voice & Feedback Box</a></li>
+          <li><a href="https://aimlcluboct.in/blog" target="_blank" rel="noopener noreferrer">Technical Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-column">
+        <h4 class="footer-heading">GitHub Repositories</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/AIMLCLUBOCT/learning_resources" target="_blank" rel="noopener noreferrer">learning_resources</a></li>
+          <li><a href="https://github.com/AIMLCLUBOCT/Projects" target="_blank" rel="noopener noreferrer">Projects Hub</a></li>
+          <li><a href="https://github.com/AIMLCLUBOCT/Workshops" target="_blank" rel="noopener noreferrer">Workshops Archive</a></li>
+          <li><a href="https://github.com/AIMLCLUBOCT/community-templates" target="_blank" rel="noopener noreferrer">community-templates</a></li>
+          <li><a href="https://github.com/AIMLCLUBOCT/EVENTS" target="_blank" rel="noopener noreferrer">EVENTS Archive</a></li>
+          <li><a href="https://github.com/AIMLCLUBOCT/.github" target="_blank" rel="noopener noreferrer">.github Governance</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-column">
+        <h4 class="footer-heading">Community & Support</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/AIMLCLUBOCT/learning_resources/discussions" target="_blank" rel="noopener noreferrer">Discussion Forums</a></li>
+          <li><a href="https://github.com/AIMLCLUBOCT/.github/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing Guide</a></li>
+          <li><a href="https://github.com/AIMLCLUBOCT/.github/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer">Code of Conduct</a></li>
+          <li><a href="mailto:aimlcluboct@gmail.com">aimlcluboct@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 AI & Machine Learning Club – Oriental College of Technology, Bhopal. All rights reserved.</p>
+        <p class="footer-quote">“The best way to predict the future is to invent it.” — Alan Kay</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
