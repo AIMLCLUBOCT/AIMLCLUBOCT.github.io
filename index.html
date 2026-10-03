@@ -6,7 +6,7 @@
   <title>AI & Machine Learning Club | Oriental College of Technology, Bhopal</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Official AI & Machine Learning Club at Oriental College of Technology (OCT), Bhopal. Student-driven research laboratory and engineering collective democratizing deep learning, open-source intelligence, and applied AI systems.">
+  <meta name="description" content="Official AI & Machine Learning Club at Oriental College of Technology (OCT), Bhopal. An undergraduate research laboratory and engineering collective democratizing deep learning, open-source intelligence, and production ML systems.">
   <meta name="keywords" content="AIML Club OCT, Oriental College of Technology, AI Club Bhopal, Machine Learning Bhopal, OCT AI ML, Python for AI, Deep Learning, GenAI, PyTorch, Scikit-Learn, Student Tech Community Bhopal">
   <meta name="author" content="AIML Club OCT - Technical Council & Umesh Patel">
   <meta name="robots" content="index, follow">
@@ -26,14 +26,16 @@
   <meta name="twitter:description" content="Explore AI/ML roadmaps, Colab workshop notebooks, student project repositories, and technical hackathons.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png">
 
-  <!-- Editorial & Monospace Typography -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png">
+
+  <!-- High-Precision Typography (Outfit, Plus Jakarta Sans, JetBrains Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png">
-  <link rel="stylesheet" href="style.css?v=20261003-lab">
+  <link rel="stylesheet" href="style.css?v=20261003-editorial">
 
   <!-- Structured Data JSON-LD Schema -->
   <script type="application/ld+json">
@@ -80,7 +82,21 @@
   }
   </script>
 </head>
-<body class="theme-dark">
+<body class="theme-editorial">
+
+  <!-- Desktop Custom Interactive Cursor -->
+  <div class="custom-cursor" id="custom-cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursor-follower" aria-hidden="true">
+    <span class="cursor-badge" id="cursor-badge">EXPLORE</span>
+  </div>
+
+  <!-- Subtle Page Scroll Progress Rail -->
+  <aside class="scroll-progress-rail" id="scroll-progress-rail" aria-label="Section Navigation">
+    <div class="rail-track">
+      <div class="rail-indicator" id="rail-indicator"></div>
+    </div>
+    <div class="rail-current-tag" id="rail-current-tag">01 LEARN</div>
+  </aside>
 
   <!-- 00. LAB TELEMETRY & SYSTEM STATUS TICKER -->
   <aside class="system-telemetry-bar" id="telemetry-bar" aria-label="System Telemetry">
@@ -107,7 +123,7 @@
       </div>
       <div class="telemetry-divider hide-mobile"></div>
       <div class="telemetry-segment hide-mobile">
-        <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="telemetry-link">
+        <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="telemetry-link" title="Official Primary Production Portal">
           <span class="mono-label">PROD DOMAIN:</span>
           <span class="mono-value">aimlcluboct.in <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>
@@ -131,20 +147,19 @@
       </a>
 
       <nav class="nav-links" id="nav-links" aria-label="Primary Navigation">
-        <a href="#overview" class="nav-item">Overview</a>
-        <a href="#curriculum" class="nav-item">Curricula</a>
-        <a href="#workshops" class="nav-item">Colab Labs</a>
-        <a href="#projects" class="nav-item">Projects</a>
-        <a href="#events" class="nav-item">Events</a>
-        <a href="#team" class="nav-item">Council & Team</a>
-        <a href="#ecosystem" class="nav-item">Ecosystem</a>
+        <a href="#overview" class="nav-item">Philosophy</a>
+        <a href="#learn" class="nav-item">01 Learn</a>
+        <a href="#build" class="nav-item">02 Build</a>
+        <a href="#research" class="nav-item">03 Research</a>
+        <a href="#connect" class="nav-item">04 Connect</a>
+        <a href="#impact" class="nav-item">05 Impact</a>
       </nav>
 
       <div class="nav-controls">
-        <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="btn-terminal-outline hide-mobile" id="nav-github-cta">
+        <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="btn-terminal-outline hide-mobile" id="nav-github-cta" data-cursor="CODE">
           <i class="fa-brands fa-github"></i> <span>GitHub Org</span>
         </a>
-        <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="btn-cobalt-solid" id="nav-join-cta">
+        <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="btn-cobalt-solid" id="nav-join-cta" data-cursor="JOIN">
           <i class="fa-brands fa-whatsapp"></i> <span>Join Community</span>
         </a>
         <button class="nav-toggle-btn" id="mobile-toggle" aria-label="Toggle navigation drawer" aria-expanded="false">
@@ -153,19 +168,37 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer -->
+    <!-- Full-Screen Architectural Mobile Overlay -->
     <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <div class="drawer-brand">
+          <img src="https://raw.githubusercontent.com/AIMLCLUBOCT/.github/main/assets/aiml_club_logo.png" alt="AIML Club" class="drawer-logo">
+          <span>AIML CLUB OCT</span>
+        </div>
+        <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
       <div class="drawer-inner">
-        <a href="#overview" class="drawer-link">Overview</a>
-        <a href="#curriculum" class="drawer-link">Curricula (12 Modules)</a>
-        <a href="#workshops" class="drawer-link">Interactive Colab Labs</a>
-        <a href="#projects" class="drawer-link">Verified Projects</a>
-        <a href="#events" class="drawer-link">Events & Seminars</a>
-        <a href="#team" class="drawer-link">Leadership & Wings (41)</a>
-        <a href="#ecosystem" class="drawer-link">Ecosystem & APK</a>
-        <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="drawer-link drawer-external">
-          Official Website (aimlcluboct.in) <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
+        <div class="drawer-meta-tag">[NAVIGATION INDEX]</div>
+        <a href="#overview" class="drawer-link"><span class="d-num">00</span> Philosophy & Lifecycle</a>
+        <a href="#learn" class="drawer-link"><span class="d-num">01</span> Learn: 12-Module Curricula & Colab</a>
+        <a href="#build" class="drawer-link"><span class="d-num">02</span> Build: Verified Projects & Systems</a>
+        <a href="#research" class="drawer-link"><span class="d-num">03</span> Research: Empirical Benchmarks</a>
+        <a href="#connect" class="drawer-link"><span class="d-num">04</span> Connect: Timeline & 41-Member Council</a>
+        <a href="#impact" class="drawer-link"><span class="d-num">05</span> Impact: Ecosystem, APK & Suggestions</a>
+        
+        <div class="drawer-external-links">
+          <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="drawer-ext-item">
+            <span>Official Web (aimlcluboct.in)</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a href="https://drive.google.com/drive/folders/1xRzPHXexGDH9ggROAhSjkI2hPsdRcE9F?usp=sharing" target="_blank" rel="noopener noreferrer" class="drawer-ext-item">
+            <span>Official Android APK Drive</span>
+            <i class="fa-brands fa-android"></i>
+          </a>
+        </div>
+
         <div class="drawer-actions">
           <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="btn-cobalt-solid w-full">
             <i class="fa-brands fa-whatsapp"></i> Join WhatsApp Community
@@ -180,41 +213,63 @@
     <!-- 02. HERO SECTION -->
     <section class="hero-editorial" id="hero">
       <div class="hero-grid-bg" aria-hidden="true"></div>
+      
+      <!-- Subtle Architectural Markers -->
+      <div class="hero-marker marker-tl" aria-hidden="true">+ 23.2599° N</div>
+      <div class="hero-marker marker-tr" aria-hidden="true">+ 77.4126° E</div>
+      <div class="hero-marker marker-bl" aria-hidden="true">[SYS-READY]</div>
+      <div class="hero-marker marker-br" aria-hidden="true">[OCT-BHOPAL]</div>
+
       <div class="container hero-content">
         
-        <div class="editorial-metadata-pill">
+        <div class="editorial-metadata-pill reveal-stagger">
           <span class="pill-tag">[AIML-OCT-2026]</span>
-          <span class="pill-text">DEPARTMENT OF CSE & ALLIED BRANCHES • ORIENTAL COLLEGE OF TECHNOLOGY</span>
+          <span class="pill-text">DEPARTMENT OF CSE & ALLIED BRANCHES • ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
         </div>
 
-        <h1 class="hero-headline">
+        <h1 class="hero-headline reveal-stagger">
           Engineering the frontier of <span class="headline-em">applied artificial intelligence</span> through student research.
         </h1>
 
-        <p class="hero-subtext">
-          Bridging mathematical foundations and production-grade engineering. We are an open-source technical collective designing robust machine learning pipelines, autonomous systems, and computer vision models through peer review, live workshops, and rigorous code delivery.
+        <!-- The 6-Phase Lifecycle Statement -->
+        <div class="lifecycle-track reveal-stagger" aria-label="Core Engineering Lifecycle">
+          <span class="lc-node active">LEARN</span>
+          <span class="lc-arrow">→</span>
+          <span class="lc-node">BUILD</span>
+          <span class="lc-arrow">→</span>
+          <span class="lc-node">RESEARCH</span>
+          <span class="lc-arrow">→</span>
+          <span class="lc-node">CREATE</span>
+          <span class="lc-arrow">→</span>
+          <span class="lc-node">SHARE</span>
+          <span class="lc-arrow">→</span>
+          <span class="lc-node">CONNECT</span>
+        </div>
+
+        <p class="hero-subtext reveal-stagger">
+          Bridging mathematical rigor and production-grade engineering. We are an open-source technical collective designing robust machine learning pipelines, autonomous systems, and computer vision models through peer review, live workshops, and reproducible code delivery.
         </p>
 
-        <div class="hero-actions-cluster">
-          <a href="#curriculum" class="btn-action-primary" id="hero-curriculum-btn">
-            <i class="fa-solid fa-code"></i> <span>Explore 12-Week Curricula</span>
+        <div class="hero-actions-cluster reveal-stagger">
+          <a href="#learn" class="btn-action-primary" id="hero-curriculum-btn" data-cursor="LEARN">
+            <i class="fa-solid fa-code"></i> <span>Explore Our Work</span>
           </a>
-          <a href="#workshops" class="btn-action-secondary" id="hero-colab-btn">
+          <a href="#build" class="btn-action-secondary" id="hero-colab-btn" data-cursor="VIEW">
             <i class="fa-solid fa-flask-vial"></i> <span>Interactive Colab Labs</span>
           </a>
-          <a href="#projects" class="btn-action-minimal" id="hero-projects-btn">
-            <i class="fa-solid fa-diagram-project"></i> <span>Verified Projects</span>
+          <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="btn-action-minimal" id="hero-join-btn" data-cursor="JOIN">
+            <i class="fa-brands fa-whatsapp"></i> <span>Join the Club</span>
           </a>
         </div>
 
-        <!-- Verified Telemetry Cards -->
-        <div class="telemetry-stat-matrix">
+        <!-- Verified Telemetry Metric Cards -->
+        <div class="telemetry-stat-matrix reveal-stagger">
           <div class="stat-spec-card">
             <div class="spec-header">
               <span class="spec-id">METRIC 01</span>
               <i class="fa-solid fa-book-open"></i>
             </div>
-            <div class="spec-value">12</div>
+            <div class="spec-value" data-target="12">12</div>
             <div class="spec-label">Curriculum Modules</div>
             <div class="spec-desc">From NumPy & Calculus to LLM Agents & MLOps</div>
           </div>
@@ -224,9 +279,9 @@
               <span class="spec-id">METRIC 02</span>
               <i class="fa-solid fa-flask"></i>
             </div>
-            <div class="spec-value">04</div>
+            <div class="spec-value" data-target="4">04</div>
             <div class="spec-label">Colab Notebook Labs</div>
-            <div class="spec-desc">Zero-setup executable Colab notebooks</div>
+            <div class="spec-desc">Zero-setup executable cloud GPU environments</div>
           </div>
 
           <div class="stat-spec-card">
@@ -234,7 +289,7 @@
               <span class="spec-id">METRIC 03</span>
               <i class="fa-solid fa-calendar-check"></i>
             </div>
-            <div class="spec-value">08+</div>
+            <div class="spec-value" data-target="9">09+</div>
             <div class="spec-label">Verified Tech Events</div>
             <div class="spec-desc">Workshops, Codify, Apfity & Expert Talks</div>
           </div>
@@ -244,8 +299,8 @@
               <span class="spec-id">METRIC 04</span>
               <i class="fa-solid fa-users-gear"></i>
             </div>
-            <div class="spec-value">41</div>
-            <div class="spec-label">Active Team Members</div>
+            <div class="spec-value" data-target="41">41</div>
+            <div class="spec-label">Active Council & Leads</div>
             <div class="spec-desc">Faculty, Tech, Operations, PR & Stage Wings</div>
           </div>
         </div>
@@ -254,39 +309,39 @@
     </section>
 
     <!-- 03. MISSION & ENGINEERING PHILOSOPHY -->
-    <section class="section-editorial" id="overview">
+    <section class="section-editorial" id="overview" data-section-name="PHILOSOPHY">
       <div class="container">
         
         <div class="section-header-block">
-          <div class="header-super">01 // PHILOSOPHY & WORKFLOW</div>
-          <h2 class="section-title">The Engineering & Research Pipeline</h2>
+          <div class="header-super">00 // EDITORIAL IDENTITY & MANIFESTO</div>
+          <h2 class="section-title">We Don't Just Study AI.<br>We Build with It.</h2>
           <p class="section-lead">
-            We abandon superficial tutorials in favor of deep conceptual comprehension, mathematical proofs, and industrial software standards.
+            Surface-level tutorials cannot prepare engineers for production reality. We enforce mathematical foundations, zero-dependency algorithm rebuilds, strict peer review, and continuous deployment.
           </p>
         </div>
 
         <div class="pipeline-grid">
           
           <div class="pipeline-card">
-            <div class="card-step-num">PHASE 01</div>
+            <div class="card-step-num">PHASE 01 // FOUNDATION</div>
             <h3 class="card-step-title">Mathematical Rigor</h3>
             <p class="card-step-body">
-              Mastering matrix calculus, eigenvalues, probability distributions, gradient descent convergence, and loss function optimization before running model inference.
+              Mastering matrix calculus, eigenvalues, probability distributions, gradient descent convergence, and loss function geometry before invoking high-level frameworks.
             </p>
             <div class="tech-spec-tag">NumPy • SymPy • SciPy</div>
           </div>
 
           <div class="pipeline-card">
-            <div class="card-step-num">PHASE 02</div>
+            <div class="card-step-num">PHASE 02 // RECONSTRUCTION</div>
             <h3 class="card-step-title">Zero-Dependency Rebuilds</h3>
             <p class="card-step-body">
-              Implementing fundamental algorithms from scratch—linear regression, k-nearest neighbors, naive Bayes, and multilayer perceptrons—using pure Python and vector math.
+              Implementing fundamental algorithms from scratch—linear regression, k-nearest neighbors, naive Bayes, and multilayer perceptrons—using pure Python and analytical calculus.
             </p>
             <div class="tech-spec-tag">Pure Python 3.12+ • Pure Math</div>
           </div>
 
           <div class="pipeline-card">
-            <div class="card-step-num">PHASE 03</div>
+            <div class="card-step-num">PHASE 03 // DEEP LEARNING</div>
             <h3 class="card-step-title">Production Frameworks</h3>
             <p class="card-step-body">
               Accelerating architectures with PyTorch tensors, autograd, GPU acceleration, and Scikit-Learn pipelines. Training reproducible models with strict cross-validation.
@@ -295,16 +350,16 @@
           </div>
 
           <div class="pipeline-card">
-            <div class="card-step-num">PHASE 04</div>
-            <h3 class="card-step-title">Serving & Optimization</h3>
+            <div class="card-step-num">PHASE 04 // SERVING</div>
+            <h3 class="card-step-title">Inference & Optimization</h3>
             <p class="card-step-body">
-              Packaging weights into ONNX runtimes, building sub-20ms FastAPI microservices, implementing token streaming, and containerizing pipelines for Kubernetes deployment.
+              Packaging model weights into ONNX runtimes, building sub-20ms FastAPI microservices, implementing token streaming, and containerizing pipelines for Kubernetes deployment.
             </p>
             <div class="tech-spec-tag">FastAPI • Docker • ONNX Runtime</div>
           </div>
 
           <div class="pipeline-card">
-            <div class="card-step-num">PHASE 05</div>
+            <div class="card-step-num">PHASE 05 // RIGOR</div>
             <h3 class="card-step-title">Peer Review & PR Audit</h3>
             <p class="card-step-body">
               Every student pull request undergoes automated linting, test coverage checks, and rigorous review by club technical leads before merging into production.
@@ -313,7 +368,7 @@
           </div>
 
           <div class="pipeline-card">
-            <div class="card-step-num">PHASE 06</div>
+            <div class="card-step-num">PHASE 06 // ECOSYSTEM</div>
             <h3 class="card-step-title">Open Source Impact</h3>
             <p class="card-step-body">
               Publishing benchmark studies, dataset releases, Colab tutorials, and reusable starters to empower the next generation of engineers across Central India.
@@ -326,22 +381,31 @@
       </div>
     </section>
 
-    <!-- 04. CURRICULUM DIRECTORY (12 MODULES) -->
-    <section class="section-editorial alt-bg" id="curriculum">
+    <!-- 04. SECTION 01: LEARN (12 MODULES & INTERACTIVE COLAB) -->
+    <section class="section-editorial alt-bg" id="learn" data-section-name="01 LEARN">
       <div class="container">
         
         <div class="section-header-block">
-          <div class="header-super">02 // KNOWLEDGE BASE</div>
-          <h2 class="section-title">12-Module Progressive Curricula</h2>
+          <div class="header-super">01 // KNOWLEDGE SYSTEM</div>
+          <h2 class="section-title">The 12-Module Progressive Curricula</h2>
           <p class="section-lead">
-            Curated syllabus spanning foundational Python to advanced frontier models. Every module includes theory notebooks, exercises, and evaluation criteria.
+            Curated syllabus spanning foundational Python to advanced frontier models. Every module includes theory notebooks, exercises, and evaluation criteria hosted in our open repository.
           </p>
         </div>
 
-        <div class="curriculum-matrix">
+        <!-- Category Filter Chips -->
+        <div class="curriculum-filter-strip" id="curriculum-filters">
+          <button class="curr-chip active" data-curr-cat="all">All Modules (12)</button>
+          <button class="curr-chip" data-curr-cat="foundations">Foundations & Math</button>
+          <button class="curr-chip" data-curr-cat="ml">Classical ML & Vision</button>
+          <button class="curr-chip" data-curr-cat="nlp">NLP & Transformers</button>
+          <button class="curr-chip" data-curr-cat="production">MLOps & Research</button>
+        </div>
+
+        <div class="curriculum-matrix" id="curriculum-grid">
           
           <!-- Module 1 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="foundations">
             <div class="cell-head">
               <span class="cell-code">MOD-01</span>
               <span class="cell-level">FOUNDATION</span>
@@ -352,13 +416,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 1–2</span>
               <span><i class="fa-solid fa-code-commit"></i> NumPy • Vector Math</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/01-python-for-data-science" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/01-python-for-data-science" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 2 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="foundations">
             <div class="cell-head">
               <span class="cell-code">MOD-02</span>
               <span class="cell-level">MATHEMATICS</span>
@@ -369,13 +433,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 3–4</span>
               <span><i class="fa-solid fa-code-commit"></i> Calc • Linear Algebra</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/02-math-for-machine-learning" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/02-math-for-machine-learning" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 3 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="foundations">
             <div class="cell-head">
               <span class="cell-code">MOD-03</span>
               <span class="cell-level">DATA OPS</span>
@@ -386,13 +450,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 5</span>
               <span><i class="fa-solid fa-code-commit"></i> Pandas • Polars</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/03-data-analysis-and-visualization" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/03-data-analysis-and-visualization" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 4 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="ml">
             <div class="cell-head">
               <span class="cell-code">MOD-04</span>
               <span class="cell-level">CLASSICAL ML</span>
@@ -403,13 +467,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 6–7</span>
               <span><i class="fa-solid fa-code-commit"></i> Scikit-Learn • XGBoost</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/04-classical-machine-learning" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/04-classical-machine-learning" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 5 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="ml">
             <div class="cell-head">
               <span class="cell-code">MOD-05</span>
               <span class="cell-level">DEEP LEARNING</span>
@@ -420,13 +484,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 8–9</span>
               <span><i class="fa-solid fa-code-commit"></i> PyTorch • Autograd</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/05-deep-learning-fundamentals" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/05-deep-learning-fundamentals" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 6 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="ml">
             <div class="cell-head">
               <span class="cell-code">MOD-06</span>
               <span class="cell-level">VISION</span>
@@ -437,13 +501,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 10</span>
               <span><i class="fa-solid fa-code-commit"></i> Torchvision • OpenCV • YOLO</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/06-computer-vision" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/06-computer-vision" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 7 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="nlp">
             <div class="cell-head">
               <span class="cell-code">MOD-07</span>
               <span class="cell-level">NLP</span>
@@ -454,13 +518,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 11</span>
               <span><i class="fa-solid fa-code-commit"></i> NLTK • Spacy • HuggingFace</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/07-natural-language-processing" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/07-natural-language-processing" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 8 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="nlp">
             <div class="cell-head">
               <span class="cell-code">MOD-08</span>
               <span class="cell-level">TRANSFORMERS</span>
@@ -471,13 +535,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 12</span>
               <span><i class="fa-solid fa-code-commit"></i> Transformers • PyTorch</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/08-transformers-and-llms" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/08-transformers-and-llms" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 9 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="nlp">
             <div class="cell-head">
               <span class="cell-code">MOD-09</span>
               <span class="cell-level">GENAI</span>
@@ -488,13 +552,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 13</span>
               <span><i class="fa-solid fa-code-commit"></i> LangChain • LlamaIndex</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/09-generative-ai" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/09-generative-ai" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 10 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="production">
             <div class="cell-head">
               <span class="cell-code">MOD-10</span>
               <span class="cell-level">MLOPS</span>
@@ -505,13 +569,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 14</span>
               <span><i class="fa-solid fa-code-commit"></i> Docker • FastAPI • CI/CD</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/10-mlops-and-deployment" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/10-mlops-and-deployment" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 11 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="production">
             <div class="cell-head">
               <span class="cell-code">MOD-11</span>
               <span class="cell-level">RL & AGENTS</span>
@@ -522,13 +586,13 @@
               <span><i class="fa-regular fa-clock"></i> Week 15</span>
               <span><i class="fa-solid fa-code-commit"></i> Gymnasium • Stable-Baselines3</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/11-reinforcement-learning" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/11-reinforcement-learning" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <!-- Module 12 -->
-          <article class="curriculum-cell">
+          <article class="curriculum-cell" data-category="production">
             <div class="cell-head">
               <span class="cell-code">MOD-12</span>
               <span class="cell-level">RESEARCH</span>
@@ -539,9 +603,439 @@
               <span><i class="fa-regular fa-clock"></i> Week 16</span>
               <span><i class="fa-solid fa-code-commit"></i> Benchmarks • LaTeX</span>
             </div>
-            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/12-ai-ethics-and-research" target="_blank" rel="noopener noreferrer" class="cell-link">
+            <a href="https://github.com/AIMLCLUBOCT/learning_resources/tree/main/12-ai-ethics-and-research" target="_blank" rel="noopener noreferrer" class="cell-link" data-cursor="READ">
               Read Syllabus <i class="fa-solid fa-arrow-right"></i>
             </a>
+          </article>
+
+        </div>
+
+        <!-- Interactive Google Colab Sandbox Hub -->
+        <div class="colab-hub-wrapper" id="colab-hub">
+          <div class="colab-hub-header">
+            <div>
+              <span class="header-super">EXECUTABLE COLAB SANDBOXES</span>
+              <h3 class="colab-hub-title">Interactive Cloud GPU Notebooks</h3>
+            </div>
+            <div class="terminal-quick-clone">
+              <span class="mono-label">QUICK CLONE:</span>
+              <code>git clone https://github.com/AIMLCLUBOCT/Workshops.git</code>
+              <button class="btn-copy-code" id="btn-copy-clone" title="Copy to Clipboard" aria-label="Copy clone command">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="colab-notebooks-grid">
+            
+            <!-- Lab 01 -->
+            <div class="notebook-card">
+              <div class="notebook-meta">
+                <span class="nb-tag">LAB // 01</span>
+                <span class="nb-runtime">CPU / GPU OPTIONAL</span>
+              </div>
+              <h4 class="nb-title">Python, NumPy & Pandas Primer</h4>
+              <p class="nb-desc">
+                Fundamental vector operations, memory allocation benchmarks, array broadcasting, and clean data wrangling on real academic datasets.
+              </p>
+              <div class="nb-features">
+                <span><i class="fa-solid fa-check"></i> Vectorized arithmetic</span>
+                <span><i class="fa-solid fa-check"></i> Pandas indexing speedups</span>
+                <span><i class="fa-solid fa-check"></i> Hands-on exercises</span>
+              </div>
+              <div class="nb-action">
+                <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/01_python_numpy_pandas_primer.ipynb" target="_blank" rel="noopener noreferrer" class="btn-colab-launch" data-cursor="COLAB">
+                  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+                </a>
+                <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/01_python_numpy_pandas_primer.ipynb" target="_blank" rel="noopener noreferrer" class="btn-nb-code">
+                  <i class="fa-brands fa-github"></i> View Source
+                </a>
+              </div>
+            </div>
+
+            <!-- Lab 02 -->
+            <div class="notebook-card">
+              <div class="notebook-meta">
+                <span class="nb-tag">LAB // 02</span>
+                <span class="nb-runtime">CPU SUFFICIENT</span>
+              </div>
+              <h4 class="nb-title">Supervised Machine Learning</h4>
+              <p class="nb-desc">
+                Linear regression, logistic classifiers, decision boundaries, ROC-AUC curves, and cross-validation grids using Scikit-Learn.
+              </p>
+              <div class="nb-features">
+                <span><i class="fa-solid fa-check"></i> Confusion matrix analysis</span>
+                <span><i class="fa-solid fa-check"></i> Hyperparameter tuning</span>
+                <span><i class="fa-solid fa-check"></i> Overfitting prevention</span>
+              </div>
+              <div class="nb-action">
+                <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/02_scikit_learn_supervised_learning.ipynb" target="_blank" rel="noopener noreferrer" class="btn-colab-launch" data-cursor="COLAB">
+                  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+                </a>
+                <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/02_scikit_learn_supervised_learning.ipynb" target="_blank" rel="noopener noreferrer" class="btn-nb-code">
+                  <i class="fa-brands fa-github"></i> View Source
+                </a>
+              </div>
+            </div>
+
+            <!-- Lab 03 -->
+            <div class="notebook-card">
+              <div class="notebook-meta">
+                <span class="nb-tag">LAB // 03</span>
+                <span class="nb-runtime">T4 GPU RECOMMENDED</span>
+              </div>
+              <h4 class="nb-title">PyTorch Neural Networks from Scratch</h4>
+              <p class="nb-desc">
+                Writing custom `nn.Module` classes, understanding automatic differentiation via `loss.backward()`, learning rate schedulers, and image classification.
+              </p>
+              <div class="nb-features">
+                <span><i class="fa-solid fa-check"></i> Dynamic computation graphs</span>
+                <span><i class="fa-solid fa-check"></i> DataLoader & batching</span>
+                <span><i class="fa-solid fa-check"></i> Loss monitoring curves</span>
+              </div>
+              <div class="nb-action">
+                <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/03_neural_network_pytorch_basics.ipynb" target="_blank" rel="noopener noreferrer" class="btn-colab-launch" data-cursor="COLAB">
+                  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+                </a>
+                <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/03_neural_network_pytorch_basics.ipynb" target="_blank" rel="noopener noreferrer" class="btn-nb-code">
+                  <i class="fa-brands fa-github"></i> View Source
+                </a>
+              </div>
+            </div>
+
+            <!-- Lab 04 -->
+            <div class="notebook-card">
+              <div class="notebook-meta">
+                <span class="nb-tag">LAB // 04</span>
+                <span class="nb-runtime">CPU / GPU OPTIONAL</span>
+              </div>
+              <h4 class="nb-title">Sentiment & Text NLP Pipeline</h4>
+              <p class="nb-desc">
+                Text normalization, subword tokenizers, TF-IDF matrix transformations, Naive Bayes vs. pre-trained HuggingFace transformers.
+              </p>
+              <div class="nb-features">
+                <span><i class="fa-solid fa-check"></i> Text cleaning regular expressions</span>
+                <span><i class="fa-solid fa-check"></i> Precision / Recall curves</span>
+                <span><i class="fa-solid fa-check"></i> Inference benchmark</span>
+              </div>
+              <div class="nb-action">
+                <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/04_sentiment_analysis_nlp.ipynb" target="_blank" rel="noopener noreferrer" class="btn-colab-launch" data-cursor="COLAB">
+                  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+                </a>
+                <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/04_sentiment_analysis_nlp.ipynb" target="_blank" rel="noopener noreferrer" class="btn-nb-code">
+                  <i class="fa-brands fa-github"></i> View Source
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05. SECTION 02: BUILD (STICKY PROJECT STUDIO & SHOWCASE) -->
+    <section class="section-editorial" id="build" data-section-name="02 BUILD">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <div class="header-super">02 // PRODUCTION BUILDS</div>
+          <h2 class="section-title">Verified Student Engineering Projects</h2>
+          <p class="section-lead">
+            Production-grade systems created by OCT engineers. Every project includes automated test coverage, modular pipelines, and zero-dependency mathematical fallbacks.
+          </p>
+        </div>
+
+        <!-- Sticky Project Studio Layout -->
+        <div class="project-studio-layout" id="project-studio">
+          
+          <!-- Left Sticky Blueprint / Architecture Visualizer -->
+          <div class="studio-sticky-visual">
+            <div class="studio-visual-card">
+              <div class="studio-card-head">
+                <div class="studio-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="studio-current-id" id="studio-active-id">PROJECT // 01</span>
+                <span class="studio-status-pill status-prod" id="studio-active-status">STABLE RELEASE</span>
+              </div>
+              
+              <div class="studio-blueprint-body" id="studio-blueprint-body">
+                <div class="blueprint-diagram" id="studio-diagram">
+                  <div class="blueprint-layer layer-input">
+                    <span class="bp-tag">RAW INPUT STREAM</span>
+                    <div class="bp-spec">Email MIME Body / RFC 5322 Headers</div>
+                  </div>
+                  <div class="blueprint-connector"><i class="fa-solid fa-arrow-down"></i></div>
+                  <div class="blueprint-layer layer-proc">
+                    <span class="bp-tag">PREPROCESSING ENGINE</span>
+                    <div class="bp-spec">Regex Normalization • TF-IDF Vectorizer</div>
+                  </div>
+                  <div class="blueprint-connector"><i class="fa-solid fa-arrow-down"></i></div>
+                  <div class="blueprint-layer layer-model">
+                    <span class="bp-tag">CLASSIFICATION CORE</span>
+                    <div class="bp-spec">MultinomialNB • Fallback Vector Math</div>
+                  </div>
+                  <div class="blueprint-connector"><i class="fa-solid fa-arrow-down"></i></div>
+                  <div class="blueprint-layer layer-out">
+                    <span class="bp-tag">OUTPUT ENVELOPE</span>
+                    <div class="bp-spec">Spam Probability • Sub-8ms Latency</div>
+                  </div>
+                </div>
+
+                <div class="studio-live-telemetry">
+                  <div class="studio-stat">
+                    <span class="s-label">ACCURACY</span>
+                    <span class="s-val" id="studio-stat-1">97.4%</span>
+                  </div>
+                  <div class="studio-stat">
+                    <span class="s-label">LATENCY</span>
+                    <span class="s-val" id="studio-stat-2">&lt; 8ms</span>
+                  </div>
+                  <div class="studio-stat">
+                    <span class="s-label">COVERAGE</span>
+                    <span class="s-val" id="studio-stat-3">100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Scrolling Project Feed -->
+          <div class="studio-project-feed">
+            
+            <!-- Project 01 -->
+            <article class="project-feed-card active" data-project-idx="0">
+              <div class="p-feed-meta">
+                <span class="p-feed-num">01 / 04</span>
+                <span class="p-feed-badge status-prod">STABLE RELEASE</span>
+              </div>
+              <h3 class="p-feed-title">Campus Phishing Email Detection System</h3>
+              <p class="p-feed-problem">
+                <strong>The Threat:</strong> Collegiate networks frequently suffer credential harvesting attacks targeting university student portals and fee gateways.
+              </p>
+              <p class="p-feed-solution">
+                <strong>The Solution:</strong> A dual-mode text classifier using TF-IDF tokenization combined with Multinomial Naive Bayes. Includes a pure Python zero-dependency mathematical fallback module for offline embedded devices.
+              </p>
+              <div class="p-feed-stack">
+                <span>Scikit-Learn</span>
+                <span>FastAPI</span>
+                <span>Pure Python Math</span>
+                <span>Pytest</span>
+              </div>
+              <div class="p-feed-actions">
+                <a href="https://github.com/AIMLCLUBOCT/Projects/tree/main/beginner/phishing-email-detector" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-sm" data-cursor="CODE">
+                  <i class="fa-brands fa-github"></i> Inspect Architecture
+                </a>
+                <span class="feed-note">Dual-Mode Fallback Enabled</span>
+              </div>
+            </article>
+
+            <!-- Project 02 -->
+            <article class="project-feed-card" data-project-idx="1">
+              <div class="p-feed-meta">
+                <span class="p-feed-num">02 / 04</span>
+                <span class="p-feed-badge status-prod">STABLE RELEASE</span>
+              </div>
+              <h3 class="p-feed-title">Student Academic Performance & Risk Predictor</h3>
+              <p class="p-feed-problem">
+                <strong>The Problem:</strong> Identifying at-risk engineering undergraduates before end-of-semester university examinations allows early academic intervention.
+              </p>
+              <p class="p-feed-solution">
+                <strong>The Solution:</strong> A tabular regression and classification model analyzing internal assessment scores, laboratory attendance, and study hours. Features an analytical gradient descent fallback engine.
+              </p>
+              <div class="p-feed-stack">
+                <span>Random Forest</span>
+                <span>Gradient Descent</span>
+                <span>Pandas</span>
+                <span>CSV Pipelines</span>
+              </div>
+              <div class="p-feed-actions">
+                <a href="https://github.com/AIMLCLUBOCT/Projects/tree/main/beginner/student-performance-predictor" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-sm" data-cursor="CODE">
+                  <i class="fa-brands fa-github"></i> Inspect Architecture
+                </a>
+                <span class="feed-note">R² Score: 0.91</span>
+              </div>
+            </article>
+
+            <!-- Project 03 -->
+            <article class="project-feed-card" data-project-idx="2">
+              <div class="p-feed-meta">
+                <span class="p-feed-num">03 / 04</span>
+                <span class="p-feed-badge status-beta">ACTIVE LAB</span>
+              </div>
+              <h3 class="p-feed-title">Construction Safety Helmet & PPE Real-Time Vision</h3>
+              <p class="p-feed-problem">
+                <strong>The Problem:</strong> Industrial manufacturing and campus construction sites require strict personal protective equipment compliance to prevent injuries.
+              </p>
+              <p class="p-feed-solution">
+                <strong>The Solution:</strong> Fine-tuned YOLOv8 neural network trained on hard-hat and vest datasets, optimized with ONNX Runtime to maintain 45 FPS on edge video streams.
+              </p>
+              <div class="p-feed-stack">
+                <span>YOLOv8</span>
+                <span>OpenCV</span>
+                <span>ONNX Runtime</span>
+                <span>PyTorch</span>
+              </div>
+              <div class="p-feed-actions">
+                <a href="https://github.com/AIMLCLUBOCT/Projects" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-sm" data-cursor="CODE">
+                  <i class="fa-brands fa-github"></i> Inspect Architecture
+                </a>
+                <span class="feed-note">Edge Speed: 45 FPS</span>
+              </div>
+            </article>
+
+            <!-- Project 04 -->
+            <article class="project-feed-card" data-project-idx="3">
+              <div class="p-feed-meta">
+                <span class="p-feed-num">04 / 04</span>
+                <span class="p-feed-badge status-beta">ACTIVE LAB</span>
+              </div>
+              <h3 class="p-feed-title">Campus Ordinance Semantic RAG Assistant</h3>
+              <p class="p-feed-problem">
+                <strong>The Problem:</strong> University syllabi, exam rules, and college notifications span hundreds of unstructured PDF pages, making student inquiry tedious.
+              </p>
+              <p class="p-feed-solution">
+                <strong>The Solution:</strong> Hybrid BM25 keyword + dense vector semantic retrieval system over official OCT documents with citation tracking and hallucination guardrails.
+              </p>
+              <div class="p-feed-stack">
+                <span>LangChain</span>
+                <span>pgvector</span>
+                <span>FastAPI</span>
+                <span>SentenceTransformers</span>
+              </div>
+              <div class="p-feed-actions">
+                <a href="https://github.com/AIMLCLUBOCT/Projects" target="_blank" rel="noopener noreferrer" class="btn-action-primary btn-sm" data-cursor="CODE">
+                  <i class="fa-brands fa-github"></i> Inspect Architecture
+                </a>
+                <span class="feed-note">Zero Hallucination Gate</span>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 06. SECTION 03: RESEARCH & BENCHMARKS -->
+    <section class="section-editorial alt-bg" id="research" data-section-name="03 RESEARCH">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <div class="header-super">03 // EXPERIMENTAL BENCHMARKS</div>
+          <h2 class="section-title">Scientific Rigor & Empirical Studies</h2>
+          <p class="section-lead">
+            Moving beyond theoretical speculation. Our student researchers conduct empirical replications, model quantizations, and inference efficiency audits.
+          </p>
+        </div>
+
+        <div class="research-grid">
+          
+          <!-- Study 01 -->
+          <article class="research-study-card">
+            <div class="r-card-head">
+              <span class="r-study-id">EXP-01 // QUANTIZATION</span>
+              <span class="r-date">OCT-LAB 2026</span>
+            </div>
+            <h3 class="r-title">Edge Latency vs INT8 Quantization Loss</h3>
+            <p class="r-desc">
+              Quantizing ResNet-50 and YOLOv8 weights from FP32 to INT8 via ONNX Runtime to evaluate mAP degradation against inference frame rate gains on low-power Intel Celeron and Raspberry Pi edge devices.
+            </p>
+            <div class="r-benchmark-table">
+              <div class="rb-row rb-head">
+                <span>PRECISION</span>
+                <span>FPS (CPU)</span>
+                <span>mAP@50</span>
+                <span>SIZE</span>
+              </div>
+              <div class="rb-row">
+                <span>FP32 Original</span>
+                <span>12.4</span>
+                <span>88.2%</span>
+                <span>98 MB</span>
+              </div>
+              <div class="rb-row highlight-row">
+                <span>INT8 Quantized</span>
+                <span>38.7 (3.1x)</span>
+                <span>86.9% (-1.3%)</span>
+                <span>26 MB (-73%)</span>
+              </div>
+            </div>
+            <div class="r-footer">
+              <span class="r-repo"><i class="fa-brands fa-github"></i> AIMLCLUBOCT/Projects/research/quantization</span>
+            </div>
+          </article>
+
+          <!-- Study 02 -->
+          <article class="research-study-card">
+            <div class="r-card-head">
+              <span class="r-study-id">EXP-02 // VISION ROBUSTNESS</span>
+              <span class="r-date">OCT-LAB 2025</span>
+            </div>
+            <h3 class="r-title">MediaPipe Landmark Occlusion in Low-Light Classrooms</h3>
+            <p class="r-desc">
+              Evaluating 33-point pose landmark estimation drift under fluctuating ambient illumination (50–300 lux) and classroom desk occlusions for student posture analysis.
+            </p>
+            <div class="r-benchmark-table">
+              <div class="rb-row rb-head">
+                <span>CONDITION</span>
+                <span>CONFIDENCE</span>
+                <span>DRIFT (PX)</span>
+                <span>FPS</span>
+              </div>
+              <div class="rb-row">
+                <span>High Light (300 lux)</span>
+                <span>0.94</span>
+                <span>± 2.1 px</span>
+                <span>60 FPS</span>
+              </div>
+              <div class="rb-row highlight-row">
+                <span>Low Light (50 lux)</span>
+                <span>0.81</span>
+                <span>± 6.8 px</span>
+                <span>58 FPS</span>
+              </div>
+            </div>
+            <div class="r-footer">
+              <span class="r-repo"><i class="fa-brands fa-github"></i> AIMLCLUBOCT/Projects/research/occlusion</span>
+            </div>
+          </article>
+
+          <!-- Study 03 -->
+          <article class="research-study-card">
+            <div class="r-card-head">
+              <span class="r-study-id">EXP-03 // NLP PARAMETERS</span>
+              <span class="r-date">OCT-LAB 2026</span>
+            </div>
+            <h3 class="r-title">PEFT / LoRA vs Full Fine-Tuning Convergence</h3>
+            <p class="r-desc">
+              Comparing parameter-efficient fine-tuning (LoRA rank=8, alpha=16) against full backpropagation on Llama-3-8B for campus ordinance question answering on 1x 16GB GPU.
+            </p>
+            <div class="r-benchmark-table">
+              <div class="rb-row rb-head">
+                <span>METHOD</span>
+                <span>TRAINABLE PARAMS</span>
+                <span>VRAM USE</span>
+                <span>ROUGE-L</span>
+              </div>
+              <div class="rb-row">
+                <span>Full Tuning</span>
+                <span>8.03 Billion</span>
+                <span>OOM (>48GB)</span>
+                <span>N/A</span>
+              </div>
+              <div class="rb-row highlight-row">
+                <span>LoRA (r=8)</span>
+                <span>13.6 Million (0.17%)</span>
+                <span>11.4 GB</span>
+                <span>0.724</span>
+              </div>
+            </div>
+            <div class="r-footer">
+              <span class="r-repo"><i class="fa-brands fa-github"></i> AIMLCLUBOCT/Projects/research/lora-rag</span>
+            </div>
           </article>
 
         </div>
@@ -549,323 +1043,30 @@
       </div>
     </section>
 
-    <!-- 05. INTERACTIVE WORKSHOP HUB (GOOGLE COLAB BADGES) -->
-    <section class="section-editorial" id="workshops">
+    <!-- 07. SECTION 04: CONNECT (TIMELINE & 41-MEMBER COUNCIL) -->
+    <section class="section-editorial" id="connect" data-section-name="04 CONNECT">
       <div class="container">
         
         <div class="section-header-block">
-          <div class="header-super">03 // EXECUTABLE LABS</div>
-          <h2 class="section-title">Interactive Google Colab Hub</h2>
+          <div class="header-super">04 // COMMUNITY & TIMELINE</div>
+          <h2 class="section-title">Historical Log & Active Leadership</h2>
           <p class="section-lead">
-            Zero configuration required. Click to spawn cloud GPU environments with pre-loaded datasets, reproducible seeds, and exercise sandboxes.
+            Meet the 41 verified faculty, student leaders, and engineers driving the AI & Machine Learning Club forward at Oriental College of Technology.
           </p>
         </div>
 
-        <div class="colab-notebooks-grid">
-          
-          <!-- Notebook 1 -->
-          <div class="notebook-card">
-            <div class="notebook-meta">
-              <span class="nb-tag">LAB 01</span>
-              <span class="nb-runtime">CPU / GPU OPTIONAL</span>
-            </div>
-            <h3 class="nb-title">Python, NumPy & Pandas Primer</h3>
-            <p class="nb-desc">
-              Fundamental vector operations, memory allocation benchmarks, array broadcasting, and clean data wrangling on real academic datasets.
-            </p>
-            <div class="nb-features">
-              <span><i class="fa-solid fa-check"></i> Vectorized arithmetic</span>
-              <span><i class="fa-solid fa-check"></i> Pandas indexing speedups</span>
-              <span><i class="fa-solid fa-check"></i> Hands-on exercises</span>
-            </div>
-            <div class="nb-action">
-              <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/01_python_numpy_pandas_primer.ipynb" target="_blank" rel="noopener noreferrer" class="btn-colab-launch">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-              </a>
-              <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/01_python_numpy_pandas_primer.ipynb" target="_blank" rel="noopener noreferrer" class="btn-nb-code">
-                <i class="fa-brands fa-github"></i> View Source
-              </a>
-            </div>
-          </div>
-
-          <!-- Notebook 2 -->
-          <div class="notebook-card">
-            <div class="notebook-meta">
-              <span class="nb-tag">LAB 02</span>
-              <span class="nb-runtime">CPU SUFFICIENT</span>
-            </div>
-            <h3 class="nb-title">Supervised Machine Learning</h3>
-            <p class="nb-desc">
-              Linear regression, logistic classifiers, decision boundaries, ROC-AUC curves, and cross-validation grids using Scikit-Learn.
-            </p>
-            <div class="nb-features">
-              <span><i class="fa-solid fa-check"></i> Confusion matrix analysis</span>
-              <span><i class="fa-solid fa-check"></i> Hyperparameter tuning</span>
-              <span><i class="fa-solid fa-check"></i> Overfitting prevention</span>
-            </div>
-            <div class="nb-action">
-              <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/02_scikit_learn_supervised_learning.ipynb" target="_blank" rel="noopener noreferrer" class="btn-colab-launch">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-              </a>
-              <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/02_scikit_learn_supervised_learning.ipynb" target="_blank" rel="noopener noreferrer" class="btn-nb-code">
-                <i class="fa-brands fa-github"></i> View Source
-              </a>
-            </div>
-          </div>
-
-          <!-- Notebook 3 -->
-          <div class="notebook-card">
-            <div class="notebook-meta">
-              <span class="nb-tag">LAB 03</span>
-              <span class="nb-runtime">T4 GPU RECOMMENDED</span>
-            </div>
-            <h3 class="nb-title">PyTorch Neural Networks from Scratch</h3>
-            <p class="nb-desc">
-              Writing custom `nn.Module` classes, understanding automatic differentiation via `loss.backward()`, learning rate schedulers, and image classification.
-            </p>
-            <div class="nb-features">
-              <span><i class="fa-solid fa-check"></i> Dynamic computation graphs</span>
-              <span><i class="fa-solid fa-check"></i> DataLoader & batching</span>
-              <span><i class="fa-solid fa-check"></i> Loss monitoring curves</span>
-            </div>
-            <div class="nb-action">
-              <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/03_neural_network_pytorch_basics.ipynb" target="_blank" rel="noopener noreferrer" class="btn-colab-launch">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-              </a>
-              <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/03_neural_network_pytorch_basics.ipynb" target="_blank" rel="noopener noreferrer" class="btn-nb-code">
-                <i class="fa-brands fa-github"></i> View Source
-              </a>
-            </div>
-          </div>
-
-          <!-- Notebook 4 -->
-          <div class="notebook-card">
-            <div class="notebook-meta">
-              <span class="nb-tag">LAB 04</span>
-              <span class="nb-runtime">CPU / GPU OPTIONAL</span>
-            </div>
-            <h3 class="nb-title">Sentiment & Text NLP Pipeline</h3>
-            <p class="nb-desc">
-              Text normalization, subword tokenizers, TF-IDF matrix transformations, Naive Bayes vs. pre-trained HuggingFace transformers.
-            </p>
-            <div class="nb-features">
-              <span><i class="fa-solid fa-check"></i> Text cleaning regular expressions</span>
-              <span><i class="fa-solid fa-check"></i> Precision / Recall curves</span>
-              <span><i class="fa-solid fa-check"></i> Inference benchmark</span>
-            </div>
-            <div class="nb-action">
-              <a href="https://colab.research.google.com/github/AIMLCLUBOCT/Workshops/blob/main/beginner/04_sentiment_analysis_nlp.ipynb" target="_blank" rel="noopener noreferrer" class="btn-colab-launch">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-              </a>
-              <a href="https://github.com/AIMLCLUBOCT/Workshops/blob/main/beginner/04_sentiment_analysis_nlp.ipynb" target="_blank" rel="noopener noreferrer" class="btn-nb-code">
-                <i class="fa-brands fa-github"></i> View Source
-              </a>
-            </div>
-          </div>
-
+        <!-- Events Section Subheader -->
+        <div class="subsection-divider">
+          <span class="sub-label">04.1 // CHRONOLOGICAL EVENT ARCHIVE</span>
         </div>
 
-      </div>
-    </section>
-
-    <!-- 06. VERIFIED REPOSITORIES & ENGINEERING PROJECTS -->
-    <section class="section-editorial alt-bg" id="projects">
-      <div class="container">
-        
-        <div class="section-header-block">
-          <div class="header-super">04 // PRODUCTION BUILDS</div>
-          <h2 class="section-title">Verified Student Engineering Projects</h2>
-          <p class="section-lead">
-            Production-grade software created by OCT undergraduates. Every repository contains unit tests, zero-dependency execution fallbacks, and modular architecture.
-          </p>
-        </div>
-
-        <div class="projects-showcase-grid">
-          
-          <!-- Project 1 -->
-          <div class="project-detailed-card">
-            <div class="p-card-top">
-              <span class="p-status-badge status-prod">STABLE RELEASE</span>
-              <span class="p-id">PROJECT // 01</span>
-            </div>
-            <h3 class="p-title">Campus Phishing Email Detection System</h3>
-            <p class="p-problem">
-              <strong>The Problem:</strong> Collegiate communication networks frequently suffer deceptive phishing attacks targeting student credentials and university portal sessions.
-            </p>
-            <p class="p-solution">
-              <strong>Engineered Solution:</strong> A dual-mode text classifier using TF-IDF tokenization combined with a Multinomial Naive Bayes engine. Includes a pure Python zero-dependency mathematical fallback module for offline embedded devices.
-            </p>
-            <div class="p-metrics-strip">
-              <div class="p-metric">
-                <span class="p-metric-val">97.4%</span>
-                <span class="p-metric-lbl">Accuracy</span>
-              </div>
-              <div class="p-metric">
-                <span class="p-metric-val">&lt; 8ms</span>
-                <span class="p-metric-lbl">Latency</span>
-              </div>
-              <div class="p-metric">
-                <span class="p-metric-val">100%</span>
-                <span class="p-metric-lbl">Test Coverage</span>
-              </div>
-            </div>
-            <div class="p-stack-tags">
-              <span>Scikit-Learn</span>
-              <span>FastAPI</span>
-              <span>Pure Python Math</span>
-              <span>Pytest</span>
-            </div>
-            <div class="p-links">
-              <a href="https://github.com/AIMLCLUBOCT/Projects/tree/main/beginner/phishing-email-detector" target="_blank" rel="noopener noreferrer" class="btn-spec-code">
-                <i class="fa-brands fa-github"></i> Inspect Architecture
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-detailed-card">
-            <div class="p-card-top">
-              <span class="p-status-badge status-prod">STABLE RELEASE</span>
-              <span class="p-id">PROJECT // 02</span>
-            </div>
-            <h3 class="p-title">Student Academic Performance & Risk Predictor</h3>
-            <p class="p-problem">
-              <strong>The Problem:</strong> Identifying at-risk engineering students before end-of-semester university examinations allows early academic intervention.
-            </p>
-            <p class="p-solution">
-              <strong>Engineered Solution:</strong> A tabular regression and classification model analyzing internal assessment scores, laboratory attendance, and study hours. Features an analytical gradient descent fallback engine.
-            </p>
-            <div class="p-metrics-strip">
-              <div class="p-metric">
-                <span class="p-metric-val">0.91</span>
-                <span class="p-metric-lbl">R² Score</span>
-              </div>
-              <div class="p-metric">
-                <span class="p-metric-val">0.89</span>
-                <span class="p-metric-lbl">F1-Score</span>
-              </div>
-              <div class="p-metric">
-                <span class="p-metric-val">100%</span>
-                <span class="p-metric-lbl">Synthetic Validated</span>
-              </div>
-            </div>
-            <div class="p-stack-tags">
-              <span>Random Forest</span>
-              <span>Gradient Descent</span>
-              <span>Pandas</span>
-              <span>CSV Pipelines</span>
-            </div>
-            <div class="p-links">
-              <a href="https://github.com/AIMLCLUBOCT/Projects/tree/main/beginner/student-performance-predictor" target="_blank" rel="noopener noreferrer" class="btn-spec-code">
-                <i class="fa-brands fa-github"></i> Inspect Architecture
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-detailed-card">
-            <div class="p-card-top">
-              <span class="p-status-badge status-beta">ACTIVE LAB</span>
-              <span class="p-id">PROJECT // 03</span>
-            </div>
-            <h3 class="p-title">Construction Safety Helmet & PPE Real-Time Vision</h3>
-            <p class="p-problem">
-              <strong>The Problem:</strong> Industrial manufacturing and campus construction sites require strict personal protective equipment compliance to prevent injuries.
-            </p>
-            <p class="p-solution">
-              <strong>Engineered Solution:</strong> Fine-tuned YOLOv8 neural network trained on hard-hat and vest datasets, optimized with ONNX Runtime to maintain 45 FPS on edge video streams.
-            </p>
-            <div class="p-metrics-strip">
-              <div class="p-metric">
-                <span class="p-metric-val">45 FPS</span>
-                <span class="p-metric-lbl">Edge Speed</span>
-              </div>
-              <div class="p-metric">
-                <span class="p-metric-val">0.88</span>
-                <span class="p-metric-lbl">mAP@50</span>
-              </div>
-              <div class="p-metric">
-                <span class="p-metric-val">ONNX</span>
-                <span class="p-metric-lbl">Quantized</span>
-              </div>
-            </div>
-            <div class="p-stack-tags">
-              <span>YOLOv8</span>
-              <span>OpenCV</span>
-              <span>ONNX Runtime</span>
-              <span>PyTorch</span>
-            </div>
-            <div class="p-links">
-              <a href="https://github.com/AIMLCLUBOCT/Projects" target="_blank" rel="noopener noreferrer" class="btn-spec-code">
-                <i class="fa-brands fa-github"></i> Inspect Architecture
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="project-detailed-card">
-            <div class="p-card-top">
-              <span class="p-status-badge status-beta">ACTIVE LAB</span>
-              <span class="p-id">PROJECT // 04</span>
-            </div>
-            <h3 class="p-title">Campus Ordinance Semantic RAG Assistant</h3>
-            <p class="p-problem">
-              <strong>The Problem:</strong> University syllabi, exam rules, and college notifications span hundreds of unstructured PDF pages, making student inquiry tedious.
-            </p>
-            <p class="p-solution">
-              <strong>Engineered Solution:</strong> Hybrid BM25 keyword + dense vector semantic retrieval system over official OCT documents with citation tracking and hallucination guardrails.
-            </p>
-            <div class="p-metrics-strip">
-              <div class="p-metric">
-                <span class="p-metric-val">100%</span>
-                <span class="p-metric-lbl">Source Citations</span>
-              </div>
-              <div class="p-metric">
-                <span class="p-metric-val">Hybrid</span>
-                <span class="p-metric-lbl">Search Architecture</span>
-              </div>
-              <div class="p-metric">
-                <span class="p-metric-val">Zero</span>
-                <span class="p-metric-lbl">Hallucination Gate</span>
-              </div>
-            </div>
-            <div class="p-stack-tags">
-              <span>LangChain</span>
-              <span>pgvector</span>
-              <span>FastAPI</span>
-              <span>SentenceTransformers</span>
-            </div>
-            <div class="p-links">
-              <a href="https://github.com/AIMLCLUBOCT/Projects" target="_blank" rel="noopener noreferrer" class="btn-spec-code">
-                <i class="fa-brands fa-github"></i> Inspect Architecture
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 07. VERIFIED EVENTS & HISTORICAL TIMELINE -->
-    <section class="section-editorial" id="events">
-      <div class="container">
-        
-        <div class="section-header-block">
-          <div class="header-super">05 // CHRONOLOGICAL LOG</div>
-          <h2 class="section-title">Verified Technical Sessions & Events</h2>
-          <p class="section-lead">
-            Official timeline of student bootcamps, coding tournaments, expert seminars, and academic summits hosted at Oriental College of Technology.
-          </p>
-        </div>
-
-        <!-- Filter Buttons -->
+        <!-- Filter Buttons for Events -->
         <div class="event-filter-bar" id="event-filters">
           <button class="filter-chip active" data-filter="all">All Events (09)</button>
           <button class="filter-chip" data-filter="workshops">Workshops</button>
           <button class="filter-chip" data-filter="competitions">Competitions</button>
           <button class="filter-chip" data-filter="talks">Expert Talks</button>
-          <button class="filter-chip" data-filter="orientation">Orientation & Sums</button>
+          <button class="filter-chip" data-filter="orientation">Orientation</button>
         </div>
 
         <div class="timeline-container" id="events-timeline">
@@ -1049,19 +1250,9 @@
 
         </div>
 
-      </div>
-    </section>
-
-    <!-- 08. VERIFIED LEADERSHIP & COUNCIL (41 MEMBERS) -->
-    <section class="section-editorial alt-bg" id="team">
-      <div class="container">
-        
-        <div class="section-header-block">
-          <div class="header-super">06 // DIRECTORY</div>
-          <h2 class="section-title">Leadership & Department Wings</h2>
-          <p class="section-lead">
-            Meet the 41 verified faculty, student leaders, and engineers driving the AI & Machine Learning Club forward at Oriental College of Technology.
-          </p>
+        <!-- Leadership Roster Subheader -->
+        <div class="subsection-divider" style="margin-top: 5rem;">
+          <span class="sub-label">04.2 // VERIFIED ACTIVE COUNCIL & WINGS (41 MEMBERS)</span>
         </div>
 
         <!-- Department Tabs -->
@@ -1075,7 +1266,7 @@
           <button class="team-tab-btn" data-team="stage">Anchors & Stage</button>
         </div>
 
-        <!-- Search Filter -->
+        <!-- Live Search Filter -->
         <div class="team-search-wrapper">
           <div class="team-search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -1083,112 +1274,121 @@
           </div>
         </div>
 
-        <!-- Team Roster Grid -->
+        <!-- 41-Member Team Roster Grid -->
         <div class="team-roster-grid" id="team-roster">
-          <!-- Dynamically populated and verified static fallback -->
+          <!-- Dynamically populated from script.js -->
+        </div>
+
+        <!-- Open Source GitHub Repositories Subheader -->
+        <div class="subsection-divider" style="margin-top: 5rem;">
+          <span class="sub-label">04.3 // VERIFIED GITHUB ORGANIZATION REPOSITORIES</span>
+        </div>
+
+        <div class="repos-showcase-grid">
+          <div class="repo-spec-card">
+            <div class="repo-head">
+              <i class="fa-regular fa-folder-closed"></i>
+              <a href="https://github.com/AIMLCLUBOCT/learning_resources" target="_blank" rel="noopener noreferrer" class="repo-name">AIMLCLUBOCT / learning_resources</a>
+            </div>
+            <p class="repo-desc">The primary 12-module open-source curriculum spanning NumPy, Calculus, Scikit-Learn, PyTorch, Transformers, and MLOps.</p>
+            <div class="repo-meta">
+              <span><span class="lang-dot python"></span> Jupyter Notebook</span>
+              <span>MIT License</span>
+            </div>
+          </div>
+
+          <div class="repo-spec-card">
+            <div class="repo-head">
+              <i class="fa-regular fa-folder-closed"></i>
+              <a href="https://github.com/AIMLCLUBOCT/Workshops" target="_blank" rel="noopener noreferrer" class="repo-name">AIMLCLUBOCT / Workshops</a>
+            </div>
+            <p class="repo-desc">Hands-on Google Colab notebooks tailored for live student bootcamps with 1-click cloud execution.</p>
+            <div class="repo-meta">
+              <span><span class="lang-dot python"></span> Python 3.12</span>
+              <span>MIT License</span>
+            </div>
+          </div>
+
+          <div class="repo-spec-card">
+            <div class="repo-head">
+              <i class="fa-regular fa-folder-closed"></i>
+              <a href="https://github.com/AIMLCLUBOCT/Projects" target="_blank" rel="noopener noreferrer" class="repo-name">AIMLCLUBOCT / Projects</a>
+            </div>
+            <p class="repo-desc">Curated starter projects, fallbacks, and production-grade architectures with good first issues for contributors.</p>
+            <div class="repo-meta">
+              <span><span class="lang-dot python"></span> Python / FastAPI</span>
+              <span>MIT License</span>
+            </div>
+          </div>
+
+          <div class="repo-spec-card">
+            <div class="repo-head">
+              <i class="fa-regular fa-folder-closed"></i>
+              <a href="https://github.com/AIMLCLUBOCT/community-templates" target="_blank" rel="noopener noreferrer" class="repo-name">AIMLCLUBOCT / community-templates</a>
+            </div>
+            <p class="repo-desc">Standardized blueprints for ML microservices, Docker inference containers, evaluation benchmarks, and issues.</p>
+            <div class="repo-meta">
+              <span><span class="lang-dot docker"></span> Docker / YAML</span>
+              <span>MIT License</span>
+            </div>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- 09. OFFICIAL ECOSYSTEM & EXTERNAL HUBS -->
-    <section class="section-editorial" id="ecosystem">
+    <!-- 08. SECTION 05: JOIN & ECOSYSTEM IMPACT -->
+    <section class="section-editorial alt-bg" id="impact" data-section-name="05 IMPACT">
       <div class="container">
         
-        <div class="section-header-block">
-          <div class="header-super">07 // DIGITAL ECOSYSTEM</div>
-          <h2 class="section-title">Integrated Platforms & Community Portals</h2>
-          <p class="section-lead">
-            Access our production infrastructure, official Android APK, student governance forum, and collaborative channels.
+        <div class="editorial-manifesto-box">
+          <div class="manifesto-tag">[THE CHARTER]</div>
+          <h2 class="manifesto-statement">
+            BUILD SOMETHING<br>
+            <span class="statement-accent">WORTH SHARING.</span>
+          </h2>
+          <p class="manifesto-lead">
+            Artificial intelligence is not a passive spectator sport. Whether you are in your first semester writing your first matrix transpose or a final-year researcher training sparse attention decoders—our laboratory is open.
           </p>
+          <div class="manifesto-actions">
+            <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="btn-action-primary" data-cursor="JOIN">
+              <i class="fa-brands fa-whatsapp"></i> <span>Join WhatsApp Community</span>
+            </a>
+            <a href="https://aimlcluboct.in/suggestions" target="_blank" rel="noopener noreferrer" class="btn-action-secondary" data-cursor="VOICE">
+              <i class="fa-solid fa-bullhorn"></i> <span>Submit to Voice Portal</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1xRzPHXexGDH9ggROAhSjkI2hPsdRcE9F?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-action-secondary" data-cursor="APK">
+              <i class="fa-brands fa-android"></i> <span>Official APK Drive</span>
+            </a>
+          </div>
         </div>
 
-        <div class="ecosystem-cards-grid">
+        <div class="ecosystem-cards-grid" style="margin-top: 3.5rem;">
           
-          <!-- Portal 1 -->
           <div class="eco-card">
-            <div class="eco-icon-box">
-              <i class="fa-solid fa-globe"></i>
-            </div>
-            <h3 class="eco-name">Primary Production Web</h3>
-            <p class="eco-desc">
-              The flagship next-generation portal hosting club news, real-time announcements, and dynamic portal services.
-            </p>
+            <div class="eco-icon-box"><i class="fa-solid fa-globe"></i></div>
+            <h3 class="eco-name">Flagship Production Web</h3>
+            <p class="eco-desc">Next.js production web portal hosting real-time notifications, event registrations, and announcements.</p>
             <div class="eco-url">aimlcluboct.in</div>
             <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="btn-eco-access">
               Launch Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
 
-          <!-- Portal 2 -->
           <div class="eco-card">
-            <div class="eco-icon-box">
-              <i class="fa-brands fa-android"></i>
-            </div>
-            <h3 class="eco-name">Official Club Android App</h3>
-            <p class="eco-desc">
-              Native Android application offering push notifications for workshops, event ticketing, and resource downloads.
-            </p>
-            <div class="eco-url">Google Drive Distribution</div>
-            <a href="https://drive.google.com/drive/folders/1xRzPHXexGDH9ggROAhSjkI2hPsdRcE9F?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-eco-access">
-              Download APK <i class="fa-solid fa-download"></i>
-            </a>
-          </div>
-
-          <!-- Portal 3 -->
-          <div class="eco-card">
-            <div class="eco-icon-box">
-              <i class="fa-solid fa-comments"></i>
-            </div>
-            <h3 class="eco-name">Student Voice & Suggestions</h3>
-            <p class="eco-desc">
-              Transparent feedback submission portal allowing any OCT student to propose events, workshop topics, or club reforms.
-            </p>
-            <div class="eco-url">voice.aimlcluboct.in</div>
-            <a href="https://aimlcluboct.in/suggestions" target="_blank" rel="noopener noreferrer" class="btn-eco-access">
-              Submit Feedback <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-
-          <!-- Portal 4 -->
-          <div class="eco-card">
-            <div class="eco-icon-box">
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <h3 class="eco-name">Official WhatsApp Channel</h3>
-            <p class="eco-desc">
-              Verified announcement channel for instant alerts regarding hackathons, deadlines, and guest speaker sessions.
-            </p>
-            <div class="eco-url">WhatsApp Broadcast</div>
+            <div class="eco-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3 class="eco-name">Verified WhatsApp Channel</h3>
+            <p class="eco-desc">Direct announcement broadcast for competition alerts, workshop deadlines, and guest speaker sessions.</p>
+            <div class="eco-url">WhatsApp Broadcast Channel</div>
             <a href="https://whatsapp.com/channel/0029VbAthv38V0tfulumuV1D" target="_blank" rel="noopener noreferrer" class="btn-eco-access">
               Follow Channel <i class="fa-solid fa-bullhorn"></i>
             </a>
           </div>
 
-          <!-- Portal 5 -->
           <div class="eco-card">
-            <div class="eco-icon-box">
-              <i class="fa-brands fa-github"></i>
-            </div>
-            <h3 class="eco-name">GitHub Organization</h3>
-            <p class="eco-desc">
-              Central open-source repository hub containing all public curricula, starter templates, and issue boards.
-            </p>
-            <div class="eco-url">github.com/AIMLCLUBOCT</div>
-            <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="btn-eco-access">
-              Fork Repositories <i class="fa-solid fa-code-fork"></i>
-            </a>
-          </div>
-
-          <!-- Portal 6 -->
-          <div class="eco-card">
-            <div class="eco-icon-box">
-              <i class="fa-solid fa-users"></i>
-            </div>
-            <h3 class="eco-name">Commudle Tech Community</h3>
-            <p class="eco-desc">
-              Official community partner platform for event ticketing, check-ins, and hackathon certificate issuance.
-            </p>
+            <div class="eco-icon-box"><i class="fa-solid fa-users"></i></div>
+            <h3 class="eco-name">Commudle Community</h3>
+            <p class="eco-desc">Official community partner platform for event ticketing, campus check-ins, and hackathon certificate issuance.</p>
             <div class="eco-url">commudle.com/communities/ai-ml-club</div>
             <a href="https://www.commudle.com/communities/ai-ml-club" target="_blank" rel="noopener noreferrer" class="btn-eco-access">
               Join Commudle <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1200,56 +1400,9 @@
       </div>
     </section>
 
-    <!-- 10. FREQUENTLY ASKED QUESTIONS -->
-    <section class="section-editorial alt-bg" id="faq">
-      <div class="container">
-        
-        <div class="section-header-block">
-          <div class="header-super">08 // INQUIRIES</div>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-lead">
-            Common questions regarding membership, research tracks, repository contribution, and prerequisites.
-          </p>
-        </div>
-
-        <div class="faq-accordion-grid">
-          
-          <div class="faq-item">
-            <h3 class="faq-question">Who is eligible to join AIML Club OCT?</h3>
-            <p class="faq-answer">
-              Any undergraduate student enrolled at Oriental College of Technology (OCT), Bhopal across any branch (CSE, AIML, IT, EC, ME, EX, CE) is eligible. We recruit annually for executive council roles and maintain open membership for our Discord, WhatsApp, and GitHub repositories year-round.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3 class="faq-question">Are there prerequisites before joining workshop labs?</h3>
-            <p class="faq-answer">
-              No prior machine learning experience is required. Module 01 begins with pure Python fundamentals and vector arithmetic. A basic familiarity with high school mathematics (linear equations and functions) is helpful.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3 class="faq-question">How does student code get contributed and reviewed?</h3>
-            <p class="faq-answer">
-              All students can fork our repositories, solve tagged <code>good first issue</code> items, and open a Pull Request. Every PR is evaluated by Tech Lead Kinshuk Verma and our system architects with automated linting and unit test verification.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3 class="faq-question">Do I need a high-end GPU laptop to participate?</h3>
-            <p class="faq-answer">
-              No. All our practical notebooks in the <code>Workshops</code> repository are tailored with 1-click Google Colab integrations that execute in cloud environments with free T4 GPU access.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
   </main>
 
-  <!-- 11. TECHNICAL FOOTER -->
+  <!-- 09. TECHNICAL FOOTER -->
   <footer class="system-footer" id="main-footer">
     <div class="container footer-content">
       
@@ -1277,7 +1430,7 @@
           <div class="f-col-header">REPOSITORIES</div>
           <ul class="f-list">
             <li><a href="https://github.com/AIMLCLUBOCT/learning_resources" target="_blank" rel="noopener noreferrer">learning_resources</a></li>
-            <li><a href="https://github.com/AIMLCLUBOCT/Workshops" target="_blank" rel="noopener noreferrer">Workshops (Colab)</a></li>
+            <li><a href="https://github.com/AIMLCLUBOCT/Workshops" target="_blank" rel="noopener noreferrer">Workshops (Colab Labs)</a></li>
             <li><a href="https://github.com/AIMLCLUBOCT/Projects" target="_blank" rel="noopener noreferrer">Projects (Starters)</a></li>
             <li><a href="https://github.com/AIMLCLUBOCT/EVENTS" target="_blank" rel="noopener noreferrer">EVENTS Archive</a></li>
             <li><a href="https://github.com/AIMLCLUBOCT/community-templates" target="_blank" rel="noopener noreferrer">community-templates</a></li>
@@ -1324,6 +1477,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261003-lab"></script>
+  <script src="script.js?v=20261003-editorial"></script>
 </body>
 </html>
