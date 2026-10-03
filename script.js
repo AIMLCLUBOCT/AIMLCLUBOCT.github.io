@@ -1336,8 +1336,128 @@
     grid.innerHTML = html;
   }
 
+
+  // 18. Accessible Curated Media Lightbox Engine
+  function initLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    const backdrop = document.getElementById('lightbox-backdrop');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    const imgEl = document.getElementById('lightbox-img');
+    const titleEl = document.getElementById('lightbox-title');
+    const categoryEl = document.getElementById('lightbox-category');
+    const dateEl = document.getElementById('lightbox-date');
+    const counterEl = document.getElementById('lightbox-counter');
+    const cards = document.querySelectorAll('.gallery-item-card');
+
+    if (!modal || !cards.length) return;
+
+    let currentIndex = 0;
+    let lastActiveElement = null;
+
+    function openLightbox(index) {
+      if (index < 0) index = cards.length - 1;
+      if (index >= cards.length) index = 0;
+      currentIndex = index;
+
+      const card = cards[currentIndex];
+      const src = card.getAttribute('data-src') || '';
+      const title = card.getAttribute('data-title') || '';
+      const category = card.getAttribute('data-category') || '';
+      const date = card.getAttribute('data-date') || '';
+
+      if (imgEl) {
+        imgEl.src = src;
+        imgEl.alt = title;
+      }
+      if (titleEl) titleEl.textContent = title;
+      if (categoryEl) categoryEl.textContent = category;
+      if (dateEl) dateEl.textContent = date;
+      if (counterEl) counterEl.textContent = (currentIndex + 1) + ' of ' + cards.length;
+
+      lastActiveElement = document.activeElement;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+        lastActiveElement.focus();
+      }
+    }
+
+    function showNext() {
+      openLightbox(currentIndex + 1);
+    }
+
+    function showPrev() {
+      openLightbox(currentIndex - 1);
+    }
+
+    // Attach click listener to each gallery card
+    cards.forEach(function (card, idx) {
+      card.addEventListener('click', function () {
+        openLightbox(idx);
+      });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(idx);
+        }
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (backdrop) backdrop.addEventListener('click', closeLightbox);
+    if (nextBtn) nextBtn.addEventListener('click', showNext);
+    if (prevBtn) prevBtn.addEventListener('click', showPrev);
+
+    // Keyboard navigation (Esc, ArrowLeft, ArrowRight)
+    window.addEventListener('keydown', function (e) {
+      if (!modal.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        showNext();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        showPrev();
+      }
+    });
+
+    // Mobile touch swipe handling
+    let touchStartX = 0;
+    modal.addEventListener('touchstart', function (e) {
+      if (e.changedTouches && e.changedTouches.length) {
+        touchStartX = e.changedTouches[0].clientX;
+      }
+    }, { passive: true });
+
+    modal.addEventListener('touchend', function (e) {
+      if (e.changedTouches && e.changedTouches.length) {
+        const touchEndX = e.changedTouches[0].clientX;
+        const diff = touchEndX - touchStartX;
+        if (diff > 50) {
+          showPrev();
+        } else if (diff < -50) {
+          showNext();
+        }
+      }
+    }, { passive: true });
+  }
+
     initHeroEntrance();
     initGitHubHeatmap();
+    initLightbox();
   });
 
 })();
