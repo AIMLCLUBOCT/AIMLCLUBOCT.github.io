@@ -1220,9 +1220,81 @@
     initTeamDirectory();
     initMobileDrawer();
     initCopyButton();
+
+  // 14. Lenis Smooth Scrolling Engine
+  function initLenisScroll() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+    if (typeof Lenis !== 'undefined') {
+      try {
+        const lenis = new Lenis({
+          duration: 1.15,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          direction: 'vertical',
+          gestureDirection: 'vertical',
+          smooth: true,
+          mouseMultiplier: 0.9,
+          smoothTouch: false,
+          touchMultiplier: 1.5,
+          infinite: false
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Keep section spy updated on Lenis scroll
+        lenis.on('scroll', function () {
+          window.dispatchEvent(new Event('scroll'));
+        });
+      } catch (err) {}
+    }
+  }
+
+  // 15. Magnetic Button Micro-Interaction
+  function initMagneticButtons() {
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    const magneticElements = document.querySelectorAll('.magnetic-btn');
+    magneticElements.forEach(function (btn) {
+      btn.addEventListener('mousemove', function (e) {
+        const rect = btn.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const deltaX = (e.clientX - centerX) * 0.22;
+        const deltaY = (e.clientY - centerY) * 0.22;
+        btn.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0)`;
+      });
+
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transform = 'translate3d(0, 0, 0)';
+      });
+    });
+  }
+
+  // 16. Choreographed Hero Entrance Sequence
+  function initHeroEntrance() {
+    const heroSection = document.getElementById('hero');
+    if (!heroSection) return;
+
+    const elements = heroSection.querySelectorAll('.reveal-stagger');
+    elements.forEach(function (el, idx) {
+      setTimeout(function () {
+        el.classList.add('visible');
+      }, 250 + idx * 140);
+    });
+  }
+
     initThemeToggle();
     initStudentActivityRadar();
     initProposeActivityModal();
+    initLenisScroll();
+    initMagneticButtons();
+    initHeroEntrance();
   });
 
 })();
