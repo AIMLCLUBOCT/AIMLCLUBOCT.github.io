@@ -3534,3 +3534,58 @@ body.theme-light .heatmap-cell.l-4 { background: #d97706; }
 .heatmap-legend .sq-2 { background: rgba(245, 158, 11, 0.5); }
 .heatmap-legend .sq-3 { background: rgba(245, 158, 11, 0.75); }
 .heatmap-legend .sq-4 { background: #f59e0b; }
+
+/* ==========================================================================
+   EVENT MEDIA PREVIEW STRIP (REAL EVENT PHOTOGRAPHS)
+   ========================================================================== */
+.event-media-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.event-media-figure {
+  margin: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-deep);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.event-media-figure:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-cobalt);
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.4);
+}
+
+.event-thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.event-media-figure:hover .event-thumbnail {
+  transform: scale(1.03);
+}
+
+.event-media-figure figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.event-media-figure figcaption i {
+  color: var(--accent-cobalt);
+}
